@@ -1,0 +1,151 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.topnav{    
+    background-color: #2c3e5092; /* Dark blue-gray background */
+    position:relative;
+    border-radius:10px; 
+    padding: 5px;
+    margin: auto;
+}
+
+.nav-link{
+    font-family:fantasy;
+    font-size: larger;
+    color: white; /* White text */
+}
+.nav-item:hover{
+    border:1px solid rgb(0, 187, 255); 
+}
+
+.nav-link:hover{
+    color: rgb(0, 187, 255); /* White text */
+}
+
+.nav-link span{
+    color: rgb(0, 187, 255); /* White text */
+    position: absolute;
+    top: 4px;
+    right: 1em;
+    max-width: 100%; /* Ensures the image doesn't overflow */
+  }
+
+.header {
+    transition: background-image 1s ease-in-out;
+    background-clip:border-box;
+    text-align: center;
+    color: black;
+    background-repeat: no-repeat;
+    background-position-y: top;
+    background-size: cover;
+    box-sizing: border-box;
+}
+
+.text-overlay-container{
+    justify-content: center;
+    padding-top: 3em;
+}
+
+.text-overlay-container h1 {
+    font-size: 48px;  /* Large, impactful font size */
+    font-weight: bold;
+    text-transform: uppercase;  /* Optional: uppercase letters for emphasis */
+    letter-spacing: 4px;  /* Spacing between letters */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);  /* Adding text shadow for contrast */
+    z-index: 2;  /* Ensure the text stays on top of the overlay */
+  }
+  
+  /* Paragraph Styling */
+  .text-overlay-container p {
+    font-size: 24px;  /* Slightly smaller than the heading */
+    font-style: italic;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);  /* Adding subtle text shadow for readability */
+    margin-top: 15px;
+    z-index: 2;
+  }
+  
+
+.header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+.header p {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+.menu-item {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+}
+
+.menu-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.menu-item h3 {
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+.card{
+    box-sizing: border-box;
+}
+
+.menu-item p {
+    font-size: 14px;
+    color: #777;
+}
+
+.menu-item .price {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.menu-item .quantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.quantity input {
+    width: 50px;
+    text-align: center;
+}
+
+button{
+    padding: 0;
+    width: fit-content;
+}
+
+
+
+
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .text-overlay-container h1 {
+      font-size: 32px;  /* Smaller font size on smaller screens */
+    }
+  
+    .text-overlay-container p {
+      font-size: 18px;  /* Smaller font size for the paragraph */
+    }
+  }
