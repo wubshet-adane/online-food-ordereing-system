@@ -157,7 +157,7 @@ $conn->close();
             <div class="mb-3">
                 <label for="sex" class="form-label">Sex</label>
                 <select class="form-select" id="sex" name="sex" required>
-                    <option value="">Select your gender</option>
+                    <option value="">Select your gender:</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                     <option value="Other">Other</option>
