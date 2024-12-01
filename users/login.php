@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $message = 'Username and password are required.';
     } else {
         // Fetch user
-        $stmt = $conn->prepare('SELECT id, password_hash FROM users WHERE username = ?');
+        $stmt = $conn->prepare('SELECT * FROM users WHERE username = ?');
         $stmt->bind_param('s', $username);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -25,10 +25,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (password_verify($password, $user['password_hash'])) {
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['username'] = $username;
-                header('Location: dashboard.php');
+                $_SESSION['firstName'] = $user['first_name'];
+                $_SESSION['image'] = $user['profileimage'];
+                $_SESSION['lastNme'] = $user['last_name'];
+                $_SESSION['email'] = $user['email'];
+                $_SESSION['password'] = $user['password_hash'];
+                $_SESSION['age'] = $user['age'];
+                $_SESSION['sex'] = $user['sex'];
+                header("Location: ../index.php?" . SID);
                 exit;
             } else {
-                $message = 'Invalid username or password.';
+                $message = 'Invalid password.';
             }
         } else {
             $message = 'Invalid username or password.';

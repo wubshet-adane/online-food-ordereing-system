@@ -11,7 +11,7 @@ let index = 0; // Start with the first image
 
 function changeBackground() {
     const section = document.getElementById('dynamicSection');
-    section.style.backgroundImage = `url('${images[index]}')`;
+    section.style.backgroundImage = 'url("images[index]")';
     
     // Increment index and reset if it exceeds the array length
     index = (index + 1) % images.length;

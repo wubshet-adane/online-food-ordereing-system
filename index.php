@@ -1,3 +1,16 @@
+<?php
+// page1.php
+    //Start session to get detail user information.
+    session_start();
+
+    //include database connection.
+    include "include/connection.php";
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,6 +70,7 @@
     }
     </style>
 </head>
+
 <body>
     <div class="container-fluid">
         <!-- Header Section -->
