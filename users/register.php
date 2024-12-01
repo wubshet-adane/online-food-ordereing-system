@@ -116,7 +116,7 @@ $conn->close();
             <i class="bi bi-person-plus me-2"></i> Register for Debre Markos University Café Ordering System 
         </h2>
         <?php if (!empty($message)): ?>
-            <div class="alert alert-info text-center"><?php echo htmlspecialchars($message); ?></div>
+            <div class="alert alert-info text-center text-danger"><?php echo htmlspecialchars($message); ?></div>
         <?php endif; ?>
         <form method="POST" action="register.php" enctype="multipart/form-data" id="registerForm">
             <div class="mb-3">

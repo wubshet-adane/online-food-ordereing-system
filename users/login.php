@@ -23,15 +23,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $user = $result->fetch_assoc();
             // Verify password
             if (password_verify($password, $user['password_hash'])) {
-                $_SESSION['user_id'] = $user['id'];
-                $_SESSION['username'] = $username;
+                $_SESSION['user_loggedin'] =  true;
+                $_SESSION['user_id'] =   $user['id'];
+                $_SESSION['username'] =  $username;
                 $_SESSION['firstName'] = $user['first_name'];
-                $_SESSION['image'] = $user['profileimage'];
-                $_SESSION['lastNme'] = $user['last_name'];
-                $_SESSION['email'] = $user['email'];
-                $_SESSION['password'] = $user['password_hash'];
-                $_SESSION['age'] = $user['age'];
-                $_SESSION['sex'] = $user['sex'];
+                $_SESSION['image'] =     $user['profileimage'];
+                $_SESSION['lastName'] =  $user['last_name'];
+                $_SESSION['email'] =     $user['email'];
+                $_SESSION['password'] =  $user['password_hash'];
+                $_SESSION['age'] =       $user['age'];
+                $_SESSION['sex'] =       $user['sex'];
                 header("Location: ../index.php?" . SID);
                 exit;
             } else {
