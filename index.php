@@ -127,7 +127,7 @@
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title fw-semibold">Cream of Wild Mushroom</h5>
                         <p class="card-text">A bowl of our house special creamy mushroom soup.</p>
-                        <p class="card-text"><strong>Price: £4.00</strong></p>
+                        <p class="card-text"><strong>Price: ETB40.00</strong></p>
                         
                         <div class="d-flex align-items-center mb-3">
                             <!-- Label -->
@@ -165,7 +165,7 @@
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title fw-semibold">Cream of Wild Mushroom</h5>
                         <p class="card-text">A bowl of our house special creamy mushroom soup.</p>
-                        <p class="card-text"><strong>Price: £4.00</strong></p>
+                        <p class="card-text"><strong>Price:55.00</strong></p>
                         
                         <div class="d-flex align-items-center mb-3">
                             <!-- Label -->
@@ -204,7 +204,7 @@
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title fw-semibold">Cream of Wild Mushroom</h5>
                         <p class="card-text">A bowl of our house special creamy mushroom soup.</p>
-                        <p class="card-text"><strong>Price: £4.00</strong></p>
+                        <p class="card-text"><strong>Price: 120.00</strong></p>
                         
                         <div class="d-flex align-items-center mb-3">
                             <!-- Label -->
@@ -242,7 +242,7 @@
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title fw-semibold">Cream of Wild Mushroom</h5>
                         <p class="card-text">A bowl of our house special creamy mushroom soup.</p>
-                        <p class="card-text"><strong>Price: £4.00</strong></p>
+                        <p class="card-text"><strong>Price: 54.00</strong></p>
                         
                         <div class="d-flex align-items-center mb-3">
                             <!-- Label -->
