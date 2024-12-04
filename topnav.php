@@ -28,7 +28,7 @@
   </div>
   <a class="d-flex align-items-center" href="#">
       <?php
-        if($_SESSION['user_loggedin']==true){
+        if(isset($_SESSION['user_loggedin'])){
           ?>
 
           <span class="text-light text-decoration-none"><?php echo $_SESSION['firstName'].$_SESSION['lastName'];?><?php //echo $_SESSION['lastName']?></span>
@@ -36,12 +36,9 @@
         
         <?php
         }else{
-        ?>
-          <span class="text-light text-decoration-none"><?php echo $_SESSION['firstName'].$_SESSION['lastName'];?><?php //echo $_SESSION['lastName']?></span>
-          <img src="../<?php echo $_SESSION['image'];?>" alt='Logo' style="width: 50px; height: 50px; border-radius:50%;">
-        <?php
+          
         }
       ?>
-  </a> <!-- You can replace "Brand" with your logo or site name -->
+  </a>
 
 </nav>

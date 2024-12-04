@@ -32,14 +32,25 @@ body {
     right: 1em;
     max-width: 100%; /* Ensures the image doesn't overflow */
   }
+    /* Add this to your CSS file or within <style> tags in the HTML */
+    @keyframes floatRightToLeft {
+        0% {
+            background-position: 100% center; /* Start from right */
+        }
+        100% {
+            background-position: 0% center; /* End at the left */
+        }
+    }
 
-.header {
+
+#dynamicSection{
+    animation: floatRightToLeft 3s ease-in-out forwards; /* Apply animation */
     transition: background-image 1s ease-in-out;
+    background-image:url('images/food1.jpg');
     background-clip:border-box;
     text-align: center;
     color: black;
     background-repeat: no-repeat;
-    background-position-y: top;
     background-size: cover;
     box-sizing: border-box;
 }

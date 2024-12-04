@@ -1,17 +1,18 @@
-// bg image automatic toogler.
 // Array of image paths
 const images = [
     'food1.jpg',
     'food2.jpg',
     'homeimg.jpg',
-    'niceimages.jpg'
+    'niceimages.jpg',
+    'frfr.jpg',
 ];
 
 let index = 0; // Start with the first image
 
 function changeBackground() {
     const section = document.getElementById('dynamicSection');
-    section.style.backgroundImage = 'url("images[index]")';
+    // Use template literals to dynamically set the background image
+    section.style.backgroundImage = `url("images/${images[index]}")`;
     
     // Increment index and reset if it exceeds the array length
     index = (index + 1) % images.length;

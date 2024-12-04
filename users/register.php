@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Profile image handling
     $profile_image = null;
     if (isset($_FILES['profile_image']) && $_FILES['profile_image']['error'] == 0) {
-        $target_dir = "../images/";
+        $target_dir = "images/";
         $target_file = $target_dir . basename($_FILES["profile_image"]["name"]);
         $image_file_type = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
