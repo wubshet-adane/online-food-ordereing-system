@@ -5,11 +5,69 @@ body {
 }
 
 .topnav{    
-    background-color: #2c3e5092; /* Dark blue-gray background */
+    background-color: #2c3e50b8; /* Dark blue-gray background */
     position:relative;
     border-radius:10px; 
     padding: 5px;
     margin: auto;
+}
+
+/* Positioning the user dropdown */
+#userDropdown {
+    position: absolute; /* Positions it relative to the nearest positioned ancestor */
+    top: 100%; /* Align it to the top of the parent element */
+    right: 0; /* Align it to the right of the parent element */
+    z-index: 200; /* Ensure the dropdown is on top of other content */
+    background-color: #2c3e50b9; /* White background for the dropdown */
+    border-radius: 10px; /* Rounded corners for the dropdown */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for better visibility */
+    min-width: 200px; /* Minimum width for the dropdown */
+    display: none; /* Hidden by default, toggled with JavaScript */
+}
+
+/* Style the dropdown items */
+#userDropdown div .dropdownLink {
+    text-align: left;
+    padding: 10px 15px; /* Padding around each item */
+    color: #d5ffe9; /* Dark text color */
+    text-decoration: none; /* Remove underlines */
+    border-bottom: 1px solid #f0f0f0; /* Light border between items */
+    display: block; /* Make the items block elements */
+    transition: background-color 2s; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for dropdown items */
+#userDropdown div .dropdownLink:hover {
+    background-color: #f8f8f8; /* Light background on hover */
+    color: #007bff; /* Change text color on hover */
+}
+
+/* Additional styling for the dropdown header */
+#userDropdown div h6 {
+    padding: 10px 15px; /* Add padding around the name */
+    margin: 0; /* Remove default margin */
+    font-size: 1rem; /* Slightly larger text */
+    font-weight: bold; /* Make the name bold */
+    color: #333; /* Dark text color */
+}
+
+/* Styling for the image inside the dropdown */
+#userDropdown div img {
+    margin: auto; /* Space between the image and text */
+    height:150px;
+    border-radius: 50%; /* Circular user image */
+}
+
+/* Optional: Style the divider */
+#userDropdown div hr {
+    margin: 0; /* Remove default margin */
+    border-top: 1px solid #f0f0f0; /* Light border for the divider */
+}
+
+.dropDownButton{
+    width:fit-content;
+    border: none;
+    background-color:#44444400;
 }
 
 .nav-link{
@@ -17,7 +75,7 @@ body {
     font-size: larger;
     color: white; /* White text */
 }
-.nav-item:hover{
+.nav-item:hover, navbar a .login:hover{
     border:1px solid rgb(0, 187, 255); 
 }
 

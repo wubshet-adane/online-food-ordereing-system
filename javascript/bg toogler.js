@@ -23,3 +23,15 @@ setInterval(changeBackground, 3000);
 
 // Initialize the first background
 changeBackground();
+
+
+//script code to toogle dropdown of loogin and logout top bar
+// Get the elements
+function dropdownscript() {
+    var dropdown = document.getElementById('userDropdown');
+    if (dropdown.style.display === "none" || dropdown.style.display === "") {
+        dropdown.style.display = "block";
+    } else {
+        dropdown.style.display = "none";
+    }
+}
