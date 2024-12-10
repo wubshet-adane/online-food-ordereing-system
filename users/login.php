@@ -56,6 +56,7 @@ $conn->close();
     <title>Login Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    
     <style>
         body {
             background-color: #f8f9fa;
@@ -107,26 +108,14 @@ $conn->close();
                 <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="showPassword" style="border:1px solid blue;">
                     <label class="form-check-label" for="showPassword">Show password</label>
-                </div>            </div>
+                </div>
+            </div>
             
             <button type="submit" class="btn btn-primary w-100">Login</button>
             <p>there is no created account<a href="register.php">click here</a></p>
         </form>
     </div>
-    <script>
-        const showPasswordCheckBox = document.getElementById('showPassword');
-        const passwordInput =document.getElementById('password');
-
-        showPasswordCheckBox.addEventListener('change', function(){
-            if(showPasswordCheckBox.checked){
-                passwordInput.type = 'text';
-            }
-            else
-            {
-                passwordInput.type = 'password';
-            }
-        })
-    </script>
+    <script src="../javascript/passwords.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

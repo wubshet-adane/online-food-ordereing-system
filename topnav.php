@@ -11,61 +11,131 @@
                 <a class="nav-link" href="#">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Services</a>
+                <a class="nav-link" href="services.php">Services</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Products</a>
+                <a class="nav-link" href="products.php">Products</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Contact Us</a>
+                <a class="nav-link" href="contact.php">Contact Us</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i class="bi bi-cart-plus"></i></a>
+            <li class="nav-item" >
+                <a class="nav-link" href="users/cart.php">
+                    <i class="bi bi-cart-plus" style="position:relative; font-size:24px;">
+                    <span style="
+                        position: absolute; 
+                        top: -5px; 
+                        right: -5px; 
+                        background-color: #EEFF00FF; 
+                        color: #111111; 
+                        font-size: 12px; 
+                        font-weight: bold; 
+                        width: 20px; 
+                        height: 20px; 
+                        display: flex; 
+                        align-items: center; 
+                        justify-content: center; 
+                        border-radius: 50%; 
+                        border: 1px solid #652121FF;">
+                        5
+                    </span>
+                    </i>
+                    cart
+                </a>
             </li>
         </ul>
     </div>
     <button onclick="dropdownscript()" class="dropDownButton">
-      <a class="d-flex align-items-center" href="#" id="userMenuToggle">
+      <p class="d-flex align-items-center" href="#" id="userMenuToggle">
           <?php
+          //if useer loggedin
           if (isset($_SESSION['user_loggedin'])) {
-            if($_SESSION['image']>=1){
+            //if user have profile image
+            if(isset($_SESSION['image'])){
             ?>
                 <img src="<?php echo $_SESSION['image'];?>" title="<?php echo $_SESSION['firstName'].' ' . $_SESSION['lastName']; ?>" alt='User Image' style="width: 50px; height: 50px; border-radius:50%;">
             <?php
-            } else {
-                echo '<i class="bi bi-person-circle"></i>';
+            }
+            //if user ha not profile imaage
+            else {
+                if($_SESSION['sex'] == 'Male'){
+                    ?>
+                        <img src="images/male.jpg" title="<?php echo $_SESSION['firstName'].' ' . $_SESSION['lastName']; ?>" alt='User Image1' style="width: 50px; height: 50px; border-radius:50%;">
+                    <?php
+                }
+                else{
+                    ?>
+                        <img src="images/female.jpg" title="<?php echo $_SESSION['firstName'].' ' . $_SESSION['lastName']; ?>" alt='User Image2' style="width: 50px; height: 50px; border-radius:50%;">
+                    <?php
+                }
             }
 
-
-          } else {
-              echo '<span class="dropdownLink text-decoration-none nav-link" href="logout.php" style="text-align:center;"><i class="bi bi-box-arrow-left"></i> Login</span>';
+          }
+          //if user not loggedin
+          else {
+              echo '<span class="dropdownLink text-decoration-none nav-link" style="text-align:center; font-family:Impact, Haettenschweiler, sans-serif; font-size:smaller;">Login &nbsp;</span>';
           }
           ?>
-      </a>
+      </p>
     </button>
+    <?php if (!isset($_SESSION['user_loggedin'])) { ?>
+    <p>
+        <a href="users/register.php"> <span class="dropdownLink text-decoration-none nav-link" style="text-align:center; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size:smaller;"> signUp</span></a>
+    </p>
+    <?php } ?>
     <!-- Dropdown menu for logged-in users -->
     <div class="" id="userDropdown">
         <?php if (isset($_SESSION['user_loggedin'])): ?>
             <div class="" aria-labelledby="userMenuToggle">
-                <img src="<?php echo $_SESSION['image'];?>" class="dropdown-item" style="width: 50px; height: 50px; border-radius:50%;" />
+                <?php
+                    if($_SESSION['image']>=1){
+                        ?>
+                            <img src="<?php echo $_SESSION['image'];?>" title="<?php echo $_SESSION['firstName'].' ' . $_SESSION['lastName']; ?>" alt='profile' style="width: 100px; height: 100px; border-radius:50%;">
+                        <?php
+                        }
+                        //if user ha not profile imaage
+                        else {
+                            if($_SESSION['sex'] == 'Male'){
+                                ?>
+                                    <a href="users/editUserProfile.php"><img src="images/male.jpg" title="<?php echo $_SESSION['firstName'].' ' . $_SESSION['lastName']; ?>" alt='User Image1' style="width: 100px; height: 100px; border-radius:50%;"></a>
+                                <?php
+                            }
+                            else{
+                                ?>
+                                    <a href="users/editUserProfile.php"><img src="images/female.jpg" title="<?php echo $_SESSION['firstName'].' ' . $_SESSION['lastName']; ?>" alt='User Image2' style="width: 100px; height: 100px; border-radius:50%;"></a>
+                              <?php
+                            }
+                        }
+                ?>
                 <h3 class="text-white"><?php echo $_SESSION['firstName']. ' ' . $_SESSION['lastName']; ?></h3>
                 <hr>
-                <a class="dropdownLink" href="#"><i class="bi bi-person-fill"></i> Profile</a>
-                <a class="dropdownLink" href="#"><i class="bi bi-basket2-fill"></i> Ordered Food</a>
-                <a class="dropdownLink" href="#"><i class="bi bi-cash-coin"></i> CashOut</a>
-                <a class="dropdownLink" href="#"><i class="bi bi-cart-plus-fill"></i> Cart</a>
-                <a class="dropdownLink" href="#"><i class="bi bi-question-circle"></i> Help</a>
-                <a class="dropdownLink" href="logout.php" style="text-align:center;"><i class="bi bi-box-arrow-right"></i> Logout</a>
+                <a class="dropdownLink" href="users/editUserProfile.php"><i class="bi bi-person-fill"></i> Profile</a>
+                <a class="dropdownLink" href="users/order.php"><i class="bi bi-basket2-fill"></i> Ordered Food</a>
+                <a class="dropdownLink" href="users/checkout.php"><i class="bi bi-cash-coin"></i> CashOut</a>
+                <a class="dropdownLink" href="users/cart.php"><i class="bi bi-cart-plus-fill"></i> Cart</a>
+                <a class="dropdownLink" href="#"><i class="bi bi-cart-plus-fill"></i> something...</a>
+                <a class="dropdownLink" href="#"><i class="bi bi-cart-plus-fill"></i> something...</a>
+                <a class="dropdownLink" href="#"><i class="bi bi-cart-plus-fill"></i> something...</a>
+                <a class="dropdownLink" href="#"><i class="bi bi-cart-plus-fill"></i> something...</a>
+                <a class="dropdownLink" href="#"><i class="bi bi-cart-plus-fill"></i> something...</a>
+                <a class="dropdownLink" href="help.php"><i class="bi bi-question-circle"></i> Help</a>
+                <a class="dropdownLink" href="users/logout.php" style="text-align:center;"><i class="bi bi-box-arrow-right"></i> Logout</a>
             </div>
         <?php else: ?>
-            <div class="" aria-labelledby="userMenuToggle">  
+            <div class="" aria-labelledby="userMenuToggle">
                 <a class="dropdownLink" href="#"><i class="bi bi-person-fill"></i> Profile</a>
                 <a class="dropdownLink" href="#"><i class="bi bi-basket2-fill"></i> Ordered Food</a>
                 <a class="dropdownLink" href="#"><i class="bi bi-cash-coin"></i> CashOut</a>
                 <a class="dropdownLink" href="#"><i class="bi bi-cart-plus-fill"></i> Cart</a>
-                <a class="dropdownLink" href="#"><i class="bi bi-question-circle"></i> Help</a>
+                <a class="dropdownLink" href="#"><i class="bi bi-cart-plus-fill"></i> something...</a>
+                <a class="dropdownLink" href="#"><i class="bi bi-cart-plus-fill"></i> something...</a>
+                <a class="dropdownLink" href="#"><i class="bi bi-cart-plus-fill"></i> something...</a>
+                <a class="dropdownLink" href="#"><i class="bi bi-cart-plus-fill"></i> something...</a>
+                <a class="dropdownLink" href="#"><i class="bi bi-cart-plus-fill"></i> something...</a>
+                <a class="dropdownLink" href="help.php"><i class="bi bi-question-circle"></i> Help</a>
                 <a class="dropdownLink" href="users/login.php" style="text-align:center;"><i class="bi bi-box-arrow-left"></i> Login</a>
             </div>
         <?php endif; ?>
+
     </div>
 </nav>

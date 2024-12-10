@@ -33,7 +33,7 @@ body {
     text-decoration: none; /* Remove underlines */
     border-bottom: 1px solid #f0f0f0; /* Light border between items */
     display: block; /* Make the items block elements */
-    transition: background-color 2s; /* Smooth transition for hover effect */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
 
 /* Hover effect for dropdown items */
@@ -145,6 +145,23 @@ body {
 .header p {
     margin: 5px 0;
     font-size: 18px;
+}
+
+.badge{
+    position: absolute; 
+    top: -5px; 
+    right: -10px; 
+    background-color: #350000; 
+    color: white; 
+    font-size: 12px; 
+    font-weight: bold; 
+    width: 18px; 
+    height: 18px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    border-radius: 50%; 
+    border: 2px solid white;
 }
 
 .menu-item {

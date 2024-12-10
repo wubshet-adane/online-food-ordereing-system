@@ -7,12 +7,12 @@
         <p class="text-white">Delight & Joy</p>
     </div>
     <!--search-->
-    <div class="search-bar justify-content-center mx-auto">
-        <input type="text" placeholder="Search">
-        <button type="button">
-        <i class="bi bi-search"></i>
-        </button>
-    </div>
+    <form action="other Functionalities/searching.php" method="post" name="searchingForm">
+        <div class="search-bar justify-content-center mx-auto">
+            <input type="text" placeholder="Search" name="search" id="search">
+            <button type="button" name="searchBtn" id="searchBtn">
+            <i class="bi bi-search"></i>
+            </button>
+        </div>
+    </form>
 </header>
-<!-- bg image toogler-->
-<script src="javascript/bg toogler.js"></script>

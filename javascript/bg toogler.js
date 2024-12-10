@@ -6,9 +6,7 @@ const images = [
     'niceimages.jpg',
     'frfr.jpg',
 ];
-
 let index = 0; // Start with the first image
-
 function changeBackground() {
     const section = document.getElementById('dynamicSection');
     // Use template literals to dynamically set the background image
@@ -17,15 +15,17 @@ function changeBackground() {
     // Increment index and reset if it exceeds the array length
     index = (index + 1) % images.length;
 }
-
 // Set an interval to change the background every 3 seconds
 setInterval(changeBackground, 3000);
-
 // Initialize the first background
 changeBackground();
 
 
-//script code to toogle dropdown of loogin and logout top bar
+
+//
+//
+// 
+//script code to toogle dropdown of login and logout top bar
 // Get the elements
 function dropdownscript() {
     var dropdown = document.getElementById('userDropdown');
@@ -35,3 +35,24 @@ function dropdownscript() {
         dropdown.style.display = "none";
     }
 }
+
+
+//
+//
+//
+//
+//fanction used to hide/remove open navbar when i click onn window any where
+window.addEventListener('click', (event) => {
+    const dropdowns = document.getElementById('userDropdown');
+  
+    // Check if the click is outside the dropdown
+    if (dropdowns.style.display === 'block' && !dropdown.contains(event.target)) {
+      dropdowns.style.display = 'none';
+    }
+  });
+  
+
+  //
+  //
+  //
+  //add more ....

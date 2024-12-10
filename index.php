@@ -1,12 +1,21 @@
 <?php
-// page1.php
-    //Start session to get detail user information.
-    session_start();
+session_start();
+include "include/connection.php";
 
-    //include database connection.
-    include "include/connection.php";
-
+$search = '';
+if (isset($_POST['search']) && !empty($_POST['search'])) {
+    $search = htmlspecialchars($_POST['search']);
+    $stmt = $conn->prepare("SELECT * FROM food WHERE Name LIKE ? OR Description LIKE ? OR Catagory LIKE ? OR AvailabilityStatus LIKE ?");
+    $searchTerm = "%$search%";
+    $stmt->bind_param("ssss", $searchTerm, $searchTerm, $searchTerm, $searchTerm);
+    $stmt->execute();
+    $result = $stmt->get_result();
+} else {
+    $sql = "SELECT * FROM food";
+    $result = $conn->query($sql);
+}
 ?>
+
 
 
 
@@ -65,8 +74,7 @@
     }
 
     .search-bar button:hover {
-      color: #111;
-      font-size: 35px;
+      color: #FFEE00FF;
     }
     </style>
 </head>
@@ -158,121 +166,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Soup Item 2 -->
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card h-100" data-category="soups" data-price="4.00">
-                    <img src="images/homeimg.jpg" class="card-img-top img-fluid" alt="Cream of Wild Mushroom">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title fw-semibold">Cream of Wild Mushroom</h5>
-                        <p class="card-text">A bowl of our house special creamy mushroom soup.</p>
-                        <p class="card-text"><strong>Price:55.00</strong></p>
-                        
-                        <div class="d-flex align-items-center mb-3">
-                            <!-- Label -->
-                            <label for="quantity-salad1" class="me-2 mb-0">Quantity:</label>
-                            
-                            <!-- Quantity Selector -->
-                            <div class="input-group w-40">
-                                <!-- Decrement Button -->
-                                <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="decrementQuantity('quantity-salad2')">−</button>
-                                <!-- Input Field -->
-                                <input id="quantity-salad2" type="text" class="form-control text-center" value="1" min="1" max="10" style="max-width:50px;">
-                                <!-- Increment Button -->
-                                <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="incrementQuantity('quantity-salad2')">+</button>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-auto d-flex justify-content-between">
-                            <!-- Cart/Basket Button (Left-Aligned) -->
-                            <button class="btn btn-outline-secondary btn-sm" style="width: 40%;" title="add to cart">
-                                <i class="bi bi-cart3 "></i>
-                            </button>
-                            <!-- View More Button (Right-Aligned) -->
-                            <button class="btn btn-outline-secondary btn-sm" style="width: 40%;" title="read more">
-                                View More
-                            </button>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card h-100" data-category="soups" data-price="4.00">
-                    <img src="images/homeimg.jpg" class="card-img-top img-fluid" alt="Cream of Wild Mushroom">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title fw-semibold">Cream of Wild Mushroom</h5>
-                        <p class="card-text">A bowl of our house special creamy mushroom soup.</p>
-                        <p class="card-text"><strong>Price: 120.00</strong></p>
-                        
-                        <div class="d-flex align-items-center mb-3">
-                            <!-- Label -->
-                            <label for="quantity-salad1" class="me-2 mb-0">Quantity:</label>
-                            
-                            <!-- Quantity Selector -->
-                            <div class="input-group w-40">
-                                <!-- Decrement Button -->
-                                <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="decrementQuantity('quantity-salad2')">−</button>
-                                <!-- Input Field -->
-                                <input id="quantity-salad2" type="text" class="form-control text-center" value="1" min="1" max="10" style="max-width:50px;">
-                                <!-- Increment Button -->
-                                <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="incrementQuantity('quantity-salad2')">+</button>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-auto d-flex justify-content-between">
-                            <!-- Cart/Basket Button (Left-Aligned) -->
-                            <button class="btn btn-outline-secondary btn-sm" style="width: 40%;" title="add to cart">
-                                <i class="bi bi-cart3 "></i>
-                            </button>
-                            <!-- View More Button (Right-Aligned) -->
-                            <button class="btn btn-outline-secondary btn-sm" style="width: 40%;" title="read more">
-                                View More
-                            </button>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card h-100" data-category="soups" data-price="4.00">
-                    <img src="images/homeimg.jpg" class="card-img-top img-fluid" alt="Cream of Wild Mushroom">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title fw-semibold">Cream of Wild Mushroom</h5>
-                        <p class="card-text">A bowl of our house special creamy mushroom soup.</p>
-                        <p class="card-text"><strong>Price: 54.00</strong></p>
-                        
-                        <div class="d-flex align-items-center mb-3">
-                            <!-- Label -->
-                            <label for="quantity-salad1" class="me-2 mb-0">Quantity:</label>
-                            
-                            <!-- Quantity Selector -->
-                            <div class="input-group w-40">
-                                <!-- Decrement Button -->
-                                <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="decrementQuantity('quantity-salad2')">−</button>
-                                <!-- Input Field -->
-                                <input id="quantity-salad2" type="text" class="form-control text-center" value="1" min="1" max="10" style="max-width:50px;">
-                                <!-- Increment Button -->
-                                <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="incrementQuantity('quantity-salad2')">+</button>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-auto d-flex justify-content-between">
-                            <!-- Cart/Basket Button (Left-Aligned) -->
-                            <button class="btn btn-outline-secondary btn-sm" style="width: 40%;" title="add to cart">
-                                <i class="bi bi-cart3 "></i>
-                            </button>
-                            <!-- View More Button (Right-Aligned) -->
-                            <button class="btn btn-outline-secondary btn-sm" style="width: 40%;" title="read more">
-                                View More
-                            </button>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+      
             <!-- More soup items can be added here -->
         </div>
     </section>
@@ -281,11 +175,8 @@
     <section class="menu-category" id="salads">
         <h2 class="text-center my-4">Salads</h2>
         <div class="row g-3">
+                    
             <!-- Salad Item 1 -->
-            
-            
-            
-            <!-- Salad Item 2 -->
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                 <div class="card h-100" data-category="salads" data-price="4.50">
                     <img src="images/salad.jpg" class="card-img-top img-fluid" alt="Fresh Salad">
@@ -324,86 +215,9 @@
                     </div>
                 </div>
             </div>
+          
             
-            <!-- Salad Item 3 -->
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card h-100" data-category="salads" data-price="4.50">
-                    <img src="images/salad.jpg" class="card-img-top img-fluid" alt="Fresh Salad">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title fw-semibold">Fresh Salad</h5>
-                        <p class="card-text">Mixed greens with a tangy dressing.</p>
-                        <p class="card-text"><strong>Price: £4.50</strong></p>
-                        <div class="d-flex align-items-center mb-3">
-                            
-
-                            <!-- Label -->
-                            <label for="quantity-salad1" class="me-2 mb-0">Quantity:</label>
-                            
-                            <!-- Quantity Selector -->
-                            <div class="input-group w-40">
-                                <!-- Decrement Button -->
-                                <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="decrementQuantity('quantity-salad2')">−</button>
-                                <!-- Input Field -->
-                                <input id="quantity-salad2" type="text" class="form-control text-center" value="1" min="1" max="10" style="max-width:50px;">
-                                <!-- Increment Button -->
-                                <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="incrementQuantity('quantity-salad2')">+</button>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-auto d-flex justify-content-between">
-                            <!-- Cart/Basket Button (Left-Aligned) -->
-                            <button class="btn btn-outline-secondary btn-sm" style="width: 40%;" title="add to cart">
-                                <i class="bi bi-cart4 "></i>
-                            </button>
-                            <!-- View More Button (Right-Aligned) -->
-                            <button class="btn btn-outline-secondary btn-sm" style="width: 40%;" title="read more">
-                                View More
-                            </button>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Salad Item 4 -->
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card h-100" data-category="salads" data-price="4.50">
-                    <img src="images/salad.jpg" class="card-img-top img-fluid" alt="Fresh Salad">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title fw-semibold">Fresh Salad</h5>
-                        <p class="card-text">Mixed greens with a tangy dressing.</p>
-                        <p class="card-text"><strong>Price: £4.50</strong></p>
-                        <div class="d-flex align-items-center mb-3">
-                            
-
-                            <!-- Label -->
-                            <label for="quantity-salad1" class="me-2 mb-0">Quantity:</label>
-                            
-                            <!-- Quantity Selector -->
-                            <div class="input-group w-40">
-                                <!-- Decrement Button -->
-                                <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="decrementQuantity('quantity-salad2')">−</button>
-                                <!-- Input Field -->
-                                <input id="quantity-salad2" type="text" class="form-control text-center" value="1" min="1" max="10" style="max-width:50px;">
-                                <!-- Increment Button -->
-                                <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="incrementQuantity('quantity-salad2')">+</button>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-auto d-flex justify-content-between">
-                            <!-- Cart/Basket Button (Left-Aligned) -->
-                            <button class="btn btn-outline-secondary btn-sm" style="width: 40%;" title="add to cart">
-                                <i class="bi bi-cart3 "></i>
-                            </button>
-                            <!-- View More Button (Right-Aligned) -->
-                            <button class="btn btn-outline-secondary btn-sm" style="width: 40%;" title="read more">
-                                View More
-                            </button>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+           
             <!-- fasting food Section -->
             <section class="menu-category" id="soups">
                 <h2 class="text-center my-4">fasting food</h2>
@@ -446,121 +260,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Soup Item 2 -->
-                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                        <div class="card h-100" data-category="soups" data-price="4.00">
-                            <img src="images/homeimg.jpg" class="card-img-top img-fluid" alt="Cream of Wild Mushroom">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title fw-semibold">Cream of Wild Mushroom</h5>
-                                <p class="card-text">A bowl of our house special creamy mushroom soup.</p>
-                                <p class="card-text"><strong>Price: £4.00</strong></p>
-                                
-                                <div class="d-flex align-items-center mb-3">
-                                    <!-- Label -->
-                                    <label for="quantity-salad1" class="me-2 mb-0">Quantity:</label>
-                                    
-                                    <!-- Quantity Selector -->
-                                    <div class="input-group w-40">
-                                        <!-- Decrement Button -->
-                                        <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="decrementQuantity('quantity-salad2')">−</button>
-                                        <!-- Input Field -->
-                                        <input id="quantity-salad2" type="text" class="form-control text-center" value="1" min="1" max="10" style="max-width:50px;">
-                                        <!-- Increment Button -->
-                                        <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="incrementQuantity('quantity-salad2')">+</button>
-                                    </div>
-                                </div>
-                                
-                                <div class="mt-auto d-flex justify-content-between">
-                                    <!-- Cart/Basket Button (Left-Aligned) -->
-                                    <button class="btn btn-outline-secondary btn-sm" style="width: 40%;" title="add to cart">
-                                        <i class="bi bi-cart3 "></i>
-                                    </button>
-                                    <!-- View More Button (Right-Aligned) -->
-                                    <button class="btn btn-outline-secondary btn-sm" style="width: 40%;" title="read more">
-                                        View More
-                                    </button>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                        <div class="card h-100" data-category="soups" data-price="4.00">
-                            <img src="images/homeimg.jpg" class="card-img-top img-fluid" alt="Cream of Wild Mushroom">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title fw-semibold">Cream of Wild Mushroom</h5>
-                                <p class="card-text">A bowl of our house special creamy mushroom soup.</p>
-                                <p class="card-text"><strong>Price: £4.00</strong></p>
-                                
-                                <div class="d-flex align-items-center mb-3">
-                                    <!-- Label -->
-                                    <label for="quantity-salad1" class="me-2 mb-0">Quantity:</label>
-                                    
-                                    <!-- Quantity Selector -->
-                                    <div class="input-group w-40">
-                                        <!-- Decrement Button -->
-                                        <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="decrementQuantity('quantity-salad2')">−</button>
-                                        <!-- Input Field -->
-                                        <input id="quantity-salad2" type="text" class="form-control text-center" value="1" min="1" max="10" style="max-width:50px;">
-                                        <!-- Increment Button -->
-                                        <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="incrementQuantity('quantity-salad2')">+</button>
-                                    </div>
-                                </div>
-                                
-                                <div class="mt-auto d-flex justify-content-between">
-                                    <!-- Cart/Basket Button (Left-Aligned) -->
-                                    <button class="btn btn-outline-secondary btn-sm" style="width: 40%;" title="add to cart">
-                                        <i class="bi bi-cart3 "></i>
-                                    </button>
-                                    <!-- View More Button (Right-Aligned) -->
-                                    <button class="btn btn-outline-secondary btn-sm" style="width: 40%;" title="read more">
-                                        View More
-                                    </button>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                        <div class="card h-100" data-category="soups" data-price="4.00">
-                            <img src="images/homeimg.jpg" class="card-img-top img-fluid" alt="Cream of Wild Mushroom">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title fw-semibold">Cream of Wild Mushroom</h5>
-                                <p class="card-text">A bowl of our house special creamy mushroom soup.</p>
-                                <p class="card-text"><strong>Price: £4.00</strong></p>
-                                
-                                <div class="d-flex align-items-center mb-3">
-                                    <!-- Label -->
-                                    <label for="quantity-salad1" class="me-2 mb-0">Quantity:</label>
-                                    
-                                    <!-- Quantity Selector -->
-                                    <div class="input-group w-40">
-                                        <!-- Decrement Button -->
-                                        <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="decrementQuantity('quantity-salad2')">−</button>
-                                        <!-- Input Field -->
-                                        <input id="quantity-salad2" type="text" class="form-control text-center" value="1" min="1" max="10" style="max-width:50px;">
-                                        <!-- Increment Button -->
-                                        <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="incrementQuantity('quantity-salad2')">+</button>
-                                    </div>
-                                </div>
-                                
-                                <div class="mt-auto d-flex justify-content-between">
-                                    <!-- Cart/Basket Button (Left-Aligned) -->
-                                    <button class="btn btn-outline-secondary btn-sm" style="width: 40%;" title="add to cart">
-                                        <i class="bi bi-cart3 "></i>
-                                    </button>
-                                    <!-- View More Button (Right-Aligned) -->
-                                    <button class="btn btn-outline-secondary btn-sm" style="width: 40%;" title="read more">
-                                        View More
-                                    </button>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
+                                      
                     <!-- More soup items can be added here -->
                 </div>
             </section>
@@ -578,6 +278,8 @@
 
     <!-- quantity increament and decreament-->
     <script src="javascript/addPrice.js"></script>
+    <!-- bg image toogler-->
+    <script src="javascript/bg toogler.js"></script>
 
     <script src="searchingAndSorting.js">// Sorting functionality
     </script>

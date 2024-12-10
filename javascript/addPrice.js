@@ -16,17 +16,3 @@ function decrementQuantity(inputId) {
         input.value = parseInt(input.value) - 1;
     }
 }
-
-
-
-
-
-//add search icon around search bar
-document.getElementById('searchBtn').addEventListener('click', function() {
-    const query = document.getElementById('search').value;
-    if (query) {
-        alert('Searching for: ' + query); // Replace with your search logic
-    } else {
-        alert('Please enter a search term');
-    }
-});

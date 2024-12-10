@@ -37,13 +37,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Validate input
-    if (empty($first_name) || empty($last_name) || empty($username) || empty($email) || empty($password) || empty($confirm_password) || empty($age) || empty($sex) || empty($job)) {
+    if (empty($first_name) || empty($last_name) || empty($username) || empty($email) || empty($password) || empty($confirm_password) || empty($age) || empty($sex) || empty($job)){
         $message = 'All fields are required.';
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $message = 'Invalid email format.';
     } elseif ($password !== $confirm_password) {
         $message = 'Passwords do not match.';
-    } else {
+    } elseif($age <= 5){
+        $message = 'Age must be greater than 5.';
+    }
+    else {
         // Check if username or email already exists
         $stmt = $conn->prepare('SELECT id FROM users WHERE username = ? OR email = ?');
         $stmt->bind_param('ss', $username, $email);
@@ -187,8 +190,13 @@ $conn->close();
                     <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
                     <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required>
                 </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="showPassword" style="border:1px solid blue;">
+                    <label class="form-check-label" for="showPassword">Show password</label>
+                </div>
             </div>
             <button type="submit" class="btn btn-success w-100">Register</button>
+            <p>are you registered ?<a href="login.php">click here</a></p>
         </form>
     </div>
 
@@ -204,7 +212,7 @@ $conn->close();
             }
         });
     </script>
-    
+    <script src="../javascript/passwords.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
