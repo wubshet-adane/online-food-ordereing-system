@@ -22,23 +22,36 @@
             <li class="nav-item" >
                 <a class="nav-link" href="users/cart.php">
                     <i class="bi bi-cart-plus" style="position:relative; font-size:24px;">
-                    <span style="
-                        position: absolute; 
-                        top: -5px; 
-                        right: -5px; 
-                        background-color: #EEFF00FF; 
-                        color: #111111; 
-                        font-size: 12px; 
-                        font-weight: bold; 
-                        width: 20px; 
-                        height: 20px; 
-                        display: flex; 
-                        align-items: center; 
-                        justify-content: center; 
-                        border-radius: 50%; 
-                        border: 1px solid #652121FF;">
-                        5
-                    </span>
+                        <?php if(isset($_SESSION['user_loggedin'])){
+                                echo  ' <span style="   position: absolute;
+                                        top: -5px;
+                                        right: -5px;
+                                        background-color: #EEFF00FF;
+                                        color: #111111;
+                                        font-size: 12px;
+                                        font-weight: bold;
+                                        width: 20px;
+                                        height: 20px;
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        border-radius: 50%;
+                                        border: 1px solid #652121FF;">
+                                    ';
+
+                                $userID = $_SESSION['user_id'];
+                                $query = "SELECT SUM(Quantity) AS totalItems FROM Cart WHERE UserID = ?";
+                                $stmt = $conn->prepare($query);
+                                $stmt->bind_param('i', $userID);
+                                $stmt->execute();
+                                $stmt->bind_result($totalItems);
+                                $stmt->fetch();
+                                $stmt->free_result(); // Free result set after use
+                                $stmt->close(); // Close the statement
+                                echo $totalItems ? $totalItems : 0;
+                                echo '</span>';
+                            }
+                        ?>
                     </i>
                     cart
                 </a>
@@ -113,9 +126,7 @@
                 <a class="dropdownLink" href="users/order.php"><i class="bi bi-basket2-fill"></i> Ordered Food</a>
                 <a class="dropdownLink" href="users/checkout.php"><i class="bi bi-cash-coin"></i> CashOut</a>
                 <a class="dropdownLink" href="users/cart.php"><i class="bi bi-cart-plus-fill"></i> Cart</a>
-                <a class="dropdownLink" href="#"><i class="bi bi-cart-plus-fill"></i> something...</a>
-                <a class="dropdownLink" href="#"><i class="bi bi-cart-plus-fill"></i> something...</a>
-                <a class="dropdownLink" href="#"><i class="bi bi-cart-plus-fill"></i> something...</a>
+                <a class="dropdownLink" href="#"><i class="bi bi-cart-plus-fill"></i> something  write something...</a>
                 <a class="dropdownLink" href="#"><i class="bi bi-cart-plus-fill"></i> something...</a>
                 <a class="dropdownLink" href="#"><i class="bi bi-cart-plus-fill"></i> something...</a>
                 <a class="dropdownLink" href="help.php"><i class="bi bi-question-circle"></i> Help</a>
@@ -127,7 +138,6 @@
                 <a class="dropdownLink" href="#"><i class="bi bi-basket2-fill"></i> Ordered Food</a>
                 <a class="dropdownLink" href="#"><i class="bi bi-cash-coin"></i> CashOut</a>
                 <a class="dropdownLink" href="#"><i class="bi bi-cart-plus-fill"></i> Cart</a>
-                <a class="dropdownLink" href="#"><i class="bi bi-cart-plus-fill"></i> something...</a>
                 <a class="dropdownLink" href="#"><i class="bi bi-cart-plus-fill"></i> something...</a>
                 <a class="dropdownLink" href="#"><i class="bi bi-cart-plus-fill"></i> something...</a>
                 <a class="dropdownLink" href="#"><i class="bi bi-cart-plus-fill"></i> something...</a>
