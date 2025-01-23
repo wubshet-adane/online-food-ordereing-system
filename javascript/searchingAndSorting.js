@@ -25,3 +25,14 @@ document.getElementById('sort').addEventListener('change', function () {
     menuContainer.innerHTML = ''; // Clear existing items
     menuItems.forEach(item => menuContainer.appendChild(item)); // Append sorted items
 });
+
+//Javascript algorith for searching functionalities
+//when somebody click search bar
+document.getElementById('searchBtn').addEventListener('click', function() {
+    const query = document.getElementById('search').value;
+    if (query) {
+        confirm('Searching for: ' + query); // Replace with your search logic
+    } else {
+        alert('Please enter a search term');
+    }
+});

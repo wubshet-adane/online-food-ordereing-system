@@ -8,7 +8,7 @@ body {
 nav {
     background: linear-gradient(to bottom, #ffffff, #638bf9cd, #ffffffa5);
     padding: 10px;
-    color: white;
+    color: #FF5722;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,10 +21,10 @@ nav {
 }
 .nav-logo a{
     color:#007bff;
-    
+    text-decoration: none;
 }
 .nav-logo a:hover{
-    text-decoration: none;
+    text-decoration: underline;
     color: #111111;
 }
 
@@ -42,6 +42,10 @@ nav {
     text-transform: uppercase;
     animation: fadeIn 2s ease-out, textGlow 3s infinite alternate;
 }
+.animated-title a{
+    color:inherit;
+    text-decoration: none;
+}
 /* Text Shadow and Color Change Animation */
 @keyframes textGlow {
     0% {
@@ -50,11 +54,11 @@ nav {
     }
     50% {
         color: #74da00;
-        text-shadow: 0 0 10px #ffffff, 0 0 15px #2196F3, 0 0 20px #ffffff;
+        text-shadow: 0 0 10px #ff0000, 0 0 15px #2196F3, 0 0 20px #004cff;
     }
     100% {
         color: #ff6a00;
-        text-shadow: 0 0 15px #190600, 0 0 20px #d4ff00, 0 0 25px #ffffff;
+        text-shadow: 0 0 15px #1aff00, 0 0 20px #00f2ff, 0 0 25px #ffffff;
     }
 }
 
@@ -70,11 +74,11 @@ nav {
     }
 }
 /* Hover Effect */
-.animated-title:hover {
+.animated-title:hover ,.animated-title a:hover {
     color: #FF5722;
-    text-shadow: 0 0 10px #FF5722, 0 0 20px #FF5722, 0 0 30px #FF5722;
-    transform: scale(1.1);
     transition: all 0.3s ease-in-out;
+    animation: none;
+    text-decoration: underline;
 }
 
 
@@ -82,8 +86,8 @@ nav {
 
 
 .cart-icon i {
-    font-size: 24px;
-    color: white;
+    font-size: 30px;
+    color: #FF5722;
     position: relative;
     padding-right: 10px;
 }
@@ -92,7 +96,7 @@ nav {
     position: absolute; 
     top: -5px; 
     right: -5px; 
-    background-color: #EEFF00FF; 
+    background-color: rgb(255, 255, 255); 
     color: #111111; 
     font-size: 12px; 
     font-weight: bold; 
@@ -208,7 +212,7 @@ nav {
 /* Checkout Button */
 .btn-checkout {
     display: inline-block;
-    background-color: #0078a1;
+    background-color: #0039ca;
     padding: 5px 10px;
     color: rgb(255, 166, 0);
     font-size: 1.2rem;
@@ -217,25 +221,99 @@ nav {
     margin: auto;
     align-self:self-end;
     text-align: center;
+    transition: 0.5s;
+    border:none;
 }
 
-.btn-checkout:hover {
-    background-color: #218838;
+.btn-checkout:active {
+    background-color: #003951;
+    transform: scale(0.8);
+    box-shadow:0 0 4px black;
 }
 
 
 /*Payment methods style*/
-.orderMethod{
-    display:grid;
-}
-.payment-button{
-    display: flex;
-    justify-content: space-around;
+/* Order Method Modal Styles */
+#orderMethod {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 500px;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    z-index: 1000;
+    text-align: center;
 }
 
-.paymentBTN{
-    display:inline-block;
+#orderMethod p {
+    font-size: 20px;
+    margin-bottom: 10px;
 }
+
+#orderMethod small {
+    display: block;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+#orderMethod pre {
+    font-size: 14px;
+    background: #f1f1f1;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.payment-button {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.paymentBTN {
+    flex: 1;
+    max-width: 200px;
+}
+
+.paymentBTN a {
+    display: block;
+    padding:3px;
+    background-color: #0039ca;
+    color: rgb(255, 166, 0);
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.paymentBTN a:hover {
+    background-color: rgb(255, 166, 0);
+    color: #0039ca;
+}
+
+/* Overlay */
+#overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Show Modal */
+.show {
+    display: block;
+}
+
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {

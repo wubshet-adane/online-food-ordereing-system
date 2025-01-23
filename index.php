@@ -16,10 +16,6 @@ if (isset($_POST['search']) && !empty($_POST['search'])) {
 }
 ?>
 
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,41 +37,41 @@ if (isset($_POST['search']) && !empty($_POST['search'])) {
     <style>
         .search-bar {
             background-color:#fff;
-      display: flex;
-      align-items: center;
-      border-radius: 30px;
-      padding: 0px 15px;
-      max-width:400px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    }
+            display: flex;
+            align-items: center;
+            border-radius: 30px;
+            padding: 0px 15px;
+            max-width:400px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            }
 
-    .search-bar input {
-      background: transparent;
-      border: none;
-      outline: none;
-      width: 100%;
-      font-size: 16px;
-      padding: 8px;
-    }
+        .search-bar input {
+            background: transparent;
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 16px;
+            padding: 8px;
+            }
 
-    .search-bar button {
-      background: transparent;
-      border: none;
-      font-size: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+        .search-bar button {
+            background: transparent;
+            border: none;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            }
 
-    .search-bar button {
-      color: #11e;
-      font-size: 30px;
-      padding: 0;
-    }
+        .search-bar button {
+            color: #11e;
+            font-size: 30px;
+            padding: 0;
+            }
 
-    .search-bar button:hover {
-      color: #FFEE00FF;
-    }
+        .search-bar button:hover {
+            color: #FFEE00FF;
+            }
     </style>
 </head>
 
@@ -85,7 +81,7 @@ if (isset($_POST['search']) && !empty($_POST['search'])) {
         <?php
             include 'header.php';
         ?>
-        <!--recommendation section-->
+        <!--re+commendation section-->
         <div class="accordion" id="accordionExample">
             <div class="accordion-item">
                 <h2 class="accordion-header">
@@ -106,12 +102,14 @@ if (isset($_POST['search']) && !empty($_POST['search'])) {
             <label for="categories" class="me-2">Categories:</label>
             <select id="categories" class="form-select w-25 me-2">
                 <option value="all">All</option>
-                <option value="soups">Soups</option>
-                <option value="salads">Salads</option>
+                <option value="soups">Fasting food (የጾም ምግቦች)</option>
+                <option value="soups">Fast food (ፈጣን ምግቦች)</option>
+                <option value="salads">Rich Food (የፍስክ ምግቦች)</option>
                 <option value="drinks">Drinks</option>
-                <option value="appetizers">Appetizers</option>
+                <option value="drinks">Hot Drinks(ሻይ፣ ቡና፣ ወተት፣ ....)</option>
+                <option value="appetizers">Vegitables</option>
                 <option value="desserts">Desserts</option>
-                <option value="fasting_food">Fasting Food</option>
+                <option value="others">Others</option>
             </select>
             <label for="sort" class="me-2">Sort By:</label>
             <select id="sort" class="form-select w-25">
@@ -123,151 +121,189 @@ if (isset($_POST['search']) && !empty($_POST['search'])) {
         </section>
 
         <!-- Menu Section -->
-<div id="menu-items" class="container my-4">
-    <!-- Soups Section -->
-    <section class="menu-category" id="soups">
-        <h2 class="text-center my-4">Soups</h2>
-        <div class="row g-3">
-            <!-- Soup Item 1 -->
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card h-100" data-category="soups" data-price="4.00">
-                    <img src="images/homeimg.jpg" class="card-img-top img-fluid" alt="Cream of Wild Mushroom">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title fw-semibold">Cream of Wild Mushroom</h5>
-                        <p class="card-text">A bowl of our house special creamy mushroom soup.</p>
-                        <p class="card-text"><strong>Price: ETB40.00</strong></p>
-                        
-                        <div class="d-flex align-items-center mb-3">
-                            <!-- Label -->
-                            <label for="quantity-salad1" class="me-2 mb-0">Quantity:</label>
-                            
-                            <!-- Quantity Selector -->
-                            <div class="input-group w-40">
-                                <!-- Decrement Button -->
-                                <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="decrementQuantity('quantity-salad2')">−</button>
-                                <!-- Input Field -->
-                                <input id="quantity-salad2" type="text" class="form-control text-center" value="1" min="1" max="10" style="max-width:50px;">
-                                <!-- Increment Button -->
-                                <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="incrementQuantity('quantity-salad2')"><i class="bi bi-caret-right-square"></i></button>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-auto d-flex justify-content-between">
-                            <!-- Cart/Basket Button (Left-Aligned) -->
-                            <button class="btn btn-outline-secondary btn-sm" style="width: 40%;" title="add to cart">
-                                <i class="bi bi-cart3 "></i>
-                            </button>
-                            <!-- View More Button (Right-Aligned) -->
-                            <button class="btn btn-outline-secondary btn-sm" style="width: 40%;" title="read more">
-                                View More
-                            </button>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-      
-            <!-- More soup items can be added here -->
-        </div>
-    </section>
-
-    <!-- Salads Section -->
-    <section class="menu-category" id="salads">
-        <h2 class="text-center my-4">Salads</h2>
-        <div class="row g-3">
-                    
-            <!-- Salad Item 1 -->
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="card h-100" data-category="salads" data-price="4.50">
-                    <img src="images/salad.jpg" class="card-img-top img-fluid" alt="Fresh Salad">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title fw-semibold">Fresh Salad</h5>
-                        <p class="card-text">Mixed greens with a tangy dressing.</p>
-                        <p class="card-text"><strong>Price: £4.50</strong></p>
-                        <div class="d-flex align-items-center mb-3">
-                            
-
-                            <!-- Label -->
-                            <label for="quantity-salad1" class="me-2 mb-0">Quantity:</label>
-                            
-                            <!-- Quantity Selector -->
-                            <div class="input-group w-40">
-                                <!-- Decrement Button -->
-                                <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="decrementQuantity('quantity-salad2')">−</button>
-                                <!-- Input Field -->
-                                <input id="quantity-salad2" type="text" class="form-control text-center" value="1" min="1" max="10" style="max-width:50px;">
-                                <!-- Increment Button -->
-                                <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="incrementQuantity('quantity-salad2')">+</button>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-auto d-flex justify-content-between">
-                            <!-- Cart/Basket Button (Left-Aligned) -->
-                            <button class="btn btn-outline-secondary btn-sm" style="width: 40%;" title="add to cart">
-                                <i class="bi bi-cart3 "></i>
-                            </button>
-                            <!-- View More Button (Right-Aligned) -->
-                            <button class="btn btn-outline-secondary btn-sm" style="width: 40%;" title="read more">
-                                View More
-                            </button>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-          
+        <div id="menu-items" class="container my-4">
+        <!-- Soups Section -->
+        <section class="menu-category" id="soups">
+            <h2 class="text-center my-4">Soups</h2>
+            <div class="row g-3">
             
-           
-            <!-- fasting food Section -->
-            <section class="menu-category" id="soups">
-                <h2 class="text-center my-4">fasting food</h2>
-                <div class="row g-3">
-                    <!-- Soup Item 1 -->
-                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                        <div class="card h-100" data-category="soups" data-price="4.00">
-                            <img src="images/homeimg.jpg" class="card-img-top img-fluid" alt="Cream of Wild Mushroom">
+            <?php
+                $category = "Soups"; // Corrected variable name spelling
+                $stmt = $conn->prepare("SELECT * FROM food WHERE Category = ?");
+                
+                // Check if the statement was prepared successfully
+                if ($stmt) {
+                    $stmt->bind_param("s", $category);
+                    $stmt->execute();
+
+                    // Get the result
+                    $result = $stmt->get_result();
+
+                    // Check if there are rows and fetch them
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                    ?>        
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                        <div class="card h-100" data-category="soups" data-price="<?php echo $row['Price']; ?>">
+                            <img src="<?php echo $row['ImageURL'] ?>" class="card-img-top img-fluid" alt=" <?php echo $row['Name']?> ">
                             <div class="card-body d-flex flex-column">
-                                <h5 class="card-title fw-semibold">Cream of Wild Mushroom</h5>
-                                <p class="card-text">A bowl of our house special creamy mushroom soup.</p>
-                                <p class="card-text"><strong>Price: £4.00</strong></p>
-                                
+                                <h5 class="card-title fw-semibold"> <?php echo $row['Name']?> </h5>
+                                <p class="card-text"> <?php echo $row['Description']?> </p>
+                                <p class="card-text"><strong> <?php echo $row['Price']?> birr </strong></p>
                                 <div class="d-flex align-items-center mb-3">
-                                    <!-- Label -->
                                     <label for="quantity-salad1" class="me-2 mb-0">Quantity:</label>
-                                    
-                                    <!-- Quantity Selector -->
                                     <div class="input-group w-40">
-                                        <!-- Decrement Button -->
-                                        <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="decrementQuantity('quantity-salad2')">−</button>
-                                        <!-- Input Field -->
+                                        <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="decrementQuantity('<?php echo ''; ?>')">−</button>
                                         <input id="quantity-salad2" type="text" class="form-control text-center" value="1" min="1" max="10" style="max-width:50px;">
-                                        <!-- Increment Button -->
                                         <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="incrementQuantity('quantity-salad2')"><i class="bi bi-caret-right-square"></i></button>
                                     </div>
                                 </div>
-                                
                                 <div class="mt-auto d-flex justify-content-between">
-                                    <!-- Cart/Basket Button (Left-Aligned) -->
-                                    <button class="btn btn-outline-secondary btn-sm" style="width: 40%;" title="add to cart">cart
+                                    <button class="btn btn-outline-secondary btn-sm" style="width: 40%;" title="add to cart">
                                         <i class="bi bi-cart3 "></i>
                                     </button>
-                                    <!-- View More Button (Right-Aligned) -->
                                     <button class="btn btn-outline-secondary btn-sm" style="width: 40%;" title="read more">
                                         View More
                                     </button>
                                 </div>
-
                             </div>
                         </div>
                     </div>
-                                      
-                    <!-- More soup items can be added here -->
+            
+                <?php
+                    }
+                    } else {
+                        echo "<p style='color:red;'>No results found for the selected category.</p>";
+                    }
+
+                    // Close the statement
+                    $stmt->close();
+                } else {
+                    echo "<p style='color:red;'>Error in preparing the statement:</p> ";
+                }
+            ?>
+            </div>
+        </section>
+
+        <!-- Salads Section -->
+        <section class="menu-category" id="salads">
+            <h2 class="text-center my-4">Salads</h2>
+            <div class="row g-3">
+                        
+                <?php
+                    $catagory = "Salad";
+                    $stmt = $conn -> prepare("SELECT * FROM food WHERE Category = ?");
+                    //check if the statement was prepare successfuly
+                    if($stmt){
+                        $stmt -> bind_param("s", $catagory);
+                        $stmt -> execute();
+                        $result = $stmt -> get_result();
+                        //check if there are the value in the table or not
+                        if($result -> num_rows > 0){
+                            while($row = $result -> fetch_assoc()){
+                            ?>
+
+                            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                                    <div class="card h-100" data-category="soups" data-price="<?php echo $row['Price']; ?>">
+                                        <img src="<?php echo $row['ImageURL'] ?>" class="card-img-top img-fluid" alt=" <?php echo $row['Name']?> ">
+                                        <div class="card-body d-flex flex-column">
+                                            <h5 class="card-title fw-semibold"> <?php echo $row['Name']?> </h5>
+                                            <p class="card-text"> <?php echo $row['Description']?> </p>
+                                            <p class="card-text"><strong> <?php echo $row['Price']?> birr </strong></p>
+                                            <div class="d-flex align-items-center mb-3">
+                                                <label for="quantity-salad1" class="me-2 mb-0">Quantity:</label>
+                                                <div class="input-group w-40">
+                                                    <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="decrementQuantity('<?php echo ''; ?>')">−</button>
+                                                    <input id="quantity-salad2" type="text" class="form-control text-center" value="1" min="1" max="10" style="max-width:50px;">
+                                                    <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="incrementQuantity('quantity-salad2')"><i class="bi bi-caret-right-square"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="mt-auto d-flex justify-content-between">
+                                                <button class="btn btn-outline-secondary btn-sm" style="width: 40%;" title="add to cart">
+                                                    <i class="bi bi-cart3 "></i>
+                                                </button>
+                                                <button class="btn btn-outline-secondary btn-sm" style="width: 40%;" title="read more">
+                                                    View More
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                            <?php
+                                }
+                            } else {
+                                echo "<p style='color:red;'>No results found for the selected category.</p>";
+                            }
+
+                            // Close the statement
+                            $stmt->close();
+                        } else {
+                            echo "<p style='color:red;'>Error in preparing the statement:</p> ";
+                        }
+                    ?>
                 </div>
-            </section>
-            <!-- More salad items can be added here -->
-        </div>
-    </section>
-</div>
+        </section>
+        <!-- fasting food Section -->
+        <section class="menu-category" id="Fasting-food">
+        <h2 class="text-center my-4">Fasting-foods</h2>
+        <div class="row g-3">
+                    
+            <?php
+                $catagory = "Fasting-food";
+                $stmt = $conn -> prepare("SELECT * FROM food WHERE Category = ?");
+                //check if the statement was prepare successfuly
+                if($stmt){
+                    $stmt -> bind_param("s", $catagory);
+                    $stmt -> execute();
+                    $result = $stmt -> get_result();
+                    //check if there are the value in the table or not
+                    if($result -> num_rows > 0){
+                        while($row = $result -> fetch_assoc()){
+                        ?>
+
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                                <div class="card h-100" data-category="soups" data-price="<?php echo $row['Price']; ?>">
+                                    <img src="<?php echo $row['ImageURL'] ?>" class="card-img-top img-fluid" alt=" <?php echo $row['Name']?> ">
+                                    <div class="card-body d-flex flex-column">
+                                        <h5 class="card-title fw-semibold"> <?php echo $row['Name']?> </h5>
+                                        <p class="card-text"> <?php echo $row['Description']?> </p>
+                                        <p class="card-text"><strong> <?php echo $row['Price']?> birr </strong></p>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <label for="quantity-salad1" class="me-2 mb-0">Quantity:</label>
+                                            <div class="input-group w-40">
+                                                <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="decrementQuantity('<?php echo ''; ?>')">−</button>
+                                                <input id="quantity-salad2" type="text" class="form-control text-center" value="1" min="1" max="10" style="max-width:50px;">
+                                                <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="incrementQuantity('quantity-salad2')"><i class="bi bi-caret-right-square"></i></button>
+                                            </div>
+                                        </div>
+                                        <div class="mt-auto d-flex justify-content-between">
+                                            <button class="btn btn-outline-secondary btn-sm" style="width: 40%;" title="add to cart">
+                                                <i class="bi bi-cart3 "></i>
+                                            </button>
+                                            <button class="btn btn-outline-secondary btn-sm" style="width: 40%;" title="read more">
+                                                View More
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                        <?php
+                            }
+                        } else {
+                            echo "<p style='color:red;'>No results found for the selected category.</p>";
+                        }
+
+                        // Close the statement
+                        $stmt->close();
+                    } else {
+                        echo "<p style='color:red;'>Error in preparing the statement:</p> ";
+                    }
+                ?>
+            </div>
+        </section>
+    </div>
 
     </div>
 
@@ -281,7 +317,7 @@ if (isset($_POST['search']) && !empty($_POST['search'])) {
     <!-- bg image toogler-->
     <script src="javascript/bg toogler.js"></script>
 
-    <script src="searchingAndSorting.js">// Sorting functionality
+    <script src="javascript/searchingAndSorting.js">// Sorting functionality
     </script>
 </body>
 </html>

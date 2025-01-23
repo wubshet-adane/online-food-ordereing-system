@@ -70,10 +70,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <!-- Navbar with Cart Badge -->
     <nav>
         <div class="nav-logo"><a href="../index.php">DMU Food Ordering System</a></div>
-        <h1 class="animated-title"><?php echo $_SESSION['firstName'] . ' ' . $_SESSION['lastName'];?></h1>
+        <h1 class="animated-title"><a href=""><?php echo $_SESSION['firstName'] . ' ' . $_SESSION['lastName'];?></a></h1>
         <div class="cart-icon">
             <a href="cart.php">
-                <i class="bi bi-cart-plus" style="position:relative; font-size:24px;">
+                <i class="bi bi-cart-check-fill" style="position:relative; font-size:24px;">
                     <span>
                         <?php
                         $userID = $_SESSION['user_id'];
@@ -149,20 +149,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <span>Total:</span>
                     <span class="totalprice"><?php echo number_format($totalPrice, 2); ?> <i>birr</i></span>
                 </div>
-                <a href="checkout.php" class="btn-checkout">Proceed to Order</a>
+                <button class="btn-checkout" id="btn-checkout">Proceed to Order</button>
+                <div id="overlay"></div>
                 <div class="orderMethod" id="orderMethod">
-                    <p>Order Wethods</p>
-                    <small>Order or Proceed Your Payment based on one the following two ways of payment method!</small>
-                    <pre>select One way as you want to pay</pre>
+                    <p>Order Methods</p>
+                    <small>Order or proceed with your payment using one of the following methods:</small>
+                    <pre>Select one way as you wish to pay:</pre>
                     <div class="payment-button">
                         <div class="paymentBTN" id="paymentAPI">
-                            <a href="#" class="btn-checkout" title="preceed your payiment with tele-BIRR, mPesa Chapa, AboPay, santimPay etc...">Payment API</a>
+                            <a href="#" class="btn-checkout" title="Pay with Tele-BIRR, mPesa, Chapa, AboPay, santimPay, etc.">Payment API</a>
                         </div>
                         <div class="paymentBTN" id="countDown">
-                            <a href="#" class="btn-checkout">count down</a>
+                            <a href="#" class="btn-checkout" title="pay from your stored money at our cafe">Countdown</a>
                         </div>
                     </div>
                 </div>
+
                     
         <?php
             }else{
@@ -176,5 +178,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         ?>
     </div>
+
+            <script>
+                // JavaScript to toggle the order modal
+                document.getElementById('btn-checkout').addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.getElementById('orderMethod').style.display = 'block';
+                    document.getElementById('overlay').style.display = 'block';
+                });
+
+                // JavaScript to close the modal when clicking outside
+                document.getElementById('overlay').addEventListener('click', function () {
+                    document.getElementById('orderMethod').style.display = 'none';
+                    this.style.display = 'none';
+                });
+
+            </script>
+
 </body>
 </html>

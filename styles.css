@@ -5,11 +5,12 @@ body {
 }
 
 .topnav{    
-    background-color: #2c3e50b8; /* Dark blue-gray background */
+    background-color: #091623b8; /* Dark blue-gray background */
     position:relative;
     border-radius:10px; 
     padding: 5px;
     margin: auto;
+    border: 2px solid #050b1db8;
 }
 
 /* Positioning the user dropdown */

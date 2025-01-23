@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h3><h1>here is services page pleace add something........... </h1></h3>
-    <a href="index.html">Back to home</a>
+    <p>help center!  Keep wait ,just we will add later.........</p>
+    <p>you wish go  <a href="index.php">click here...</a></p>
 </body>
 </html>

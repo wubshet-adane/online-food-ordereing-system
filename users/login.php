@@ -33,6 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['password'] =  $user['password_hash'];
                 $_SESSION['age'] =       $user['age'];
                 $_SESSION['sex'] =       $user['sex'];
+                $_SESSION['job'] =       $user['job'];
                 header("Location: ../index.php?" . SID);
                 exit;
             } else {
@@ -59,17 +60,20 @@ $conn->close();
     
     <style>
         body {
-            background-color: #f8f9fa;
+            background-image: url('https://z-p3-scontent.fadd2-1.fna.fbcdn.net/v/t39.30808-6/258410053_2942779072642419_6780024242328252411_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=TvTF0Eyxh1EQ7kNvgG3JTBQ&_nc_zt=23&_nc_ht=z-p3-scontent.fadd2-1.fna&_nc_gid=AsErKKj4ZLsxDSGK4-G7IE5&oh=00_AYCNZX7dFLxpDjqYh_NRh6L3ZMnjH7B00waAdCr-bcpdCw&oe=676F2556');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
         }
         .login-container {
-            background: #fff;
+            background: #FFCC00FF;
             padding: 30px;
             border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
             width: 100%;
             max-width: 400px;
         }

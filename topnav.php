@@ -66,19 +66,19 @@
             //if user have profile image
             if(isset($_SESSION['image'])){
             ?>
-                <img src="<?php echo $_SESSION['image'];?>" title="<?php echo $_SESSION['firstName'].' ' . $_SESSION['lastName']; ?>" alt='User Image' style="width: 50px; height: 50px; border-radius:50%;">
+                <img src="<?php echo $_SESSION['image'];?>" title="<?php echo $_SESSION['firstName'].' ' . $_SESSION['lastName']; ?>" alt='User Img' style="width: 50px; height: 50px; border-radius:50%;">
             <?php
             }
             //if user ha not profile imaage
             else {
                 if($_SESSION['sex'] == 'Male'){
                     ?>
-                        <img src="images/male.jpg" title="<?php echo $_SESSION['firstName'].' ' . $_SESSION['lastName']; ?>" alt='User Image1' style="width: 50px; height: 50px; border-radius:50%;">
+                        <img src="images/male.jpg" title="<?php echo $_SESSION['firstName'].' ' . $_SESSION['lastName']; ?>" alt='User Img1' style="width: 50px; height: 50px; border-radius:50%;">
                     <?php
                 }
                 else{
                     ?>
-                        <img src="images/female.jpg" title="<?php echo $_SESSION['firstName'].' ' . $_SESSION['lastName']; ?>" alt='User Image2' style="width: 50px; height: 50px; border-radius:50%;">
+                        <img src="images/female.jpg" title="<?php echo $_SESSION['firstName'].' ' . $_SESSION['lastName']; ?>" alt='User Img2' style="width: 50px; height: 50px; border-radius:50%;">
                     <?php
                 }
             }
@@ -110,40 +110,32 @@
                         else {
                             if($_SESSION['sex'] == 'Male'){
                                 ?>
-                                    <a href="users/editUserProfile.php"><img src="images/male.jpg" title="<?php echo $_SESSION['firstName'].' ' . $_SESSION['lastName']; ?>" alt='User Image1' style="width: 100px; height: 100px; border-radius:50%;"></a>
+                                    <a href="users/editUserProfile.php"><img src="images/male.jpg" title="<?php echo $_SESSION['firstName'].' ' . $_SESSION['lastName']; ?>" alt='User Img1' style="width: 100px; height: 100px; border-radius:50%;"></a>
                                 <?php
                             }
                             else{
                                 ?>
-                                    <a href="users/editUserProfile.php"><img src="images/female.jpg" title="<?php echo $_SESSION['firstName'].' ' . $_SESSION['lastName']; ?>" alt='User Image2' style="width: 100px; height: 100px; border-radius:50%;"></a>
+                                    <a href="users/editUserProfile.php"><img src="images/female.jpg" title="<?php echo $_SESSION['firstName'].' ' . $_SESSION['lastName']; ?>" alt='User Img2' style="width: 100px; height: 100px; border-radius:50%;"></a>
                               <?php
                             }
                         }
                 ?>
                 <h3 class="text-white"><?php echo $_SESSION['firstName']. ' ' . $_SESSION['lastName']; ?></h3>
                 <hr>
-                <a class="dropdownLink" href="users/editUserProfile.php"><i class="bi bi-person-fill"></i> Profile</a>
+                <a class="dropdownLink" href="users/profile.php"><i class="bi bi-person-fill"></i> Profile</a>
                 <a class="dropdownLink" href="users/order.php"><i class="bi bi-basket2-fill"></i> Ordered Food</a>
                 <a class="dropdownLink" href="users/checkout.php"><i class="bi bi-cash-coin"></i> CashOut</a>
                 <a class="dropdownLink" href="users/cart.php"><i class="bi bi-cart-plus-fill"></i> Cart</a>
-                <a class="dropdownLink" href="#"><i class="bi bi-cart-plus-fill"></i> something  write something...</a>
-                <a class="dropdownLink" href="#"><i class="bi bi-cart-plus-fill"></i> something...</a>
-                <a class="dropdownLink" href="#"><i class="bi bi-cart-plus-fill"></i> something...</a>
+                <a class="dropdownLink" href="terms and conditions.php"><i class="bi bi-cart-plus-fill"></i> terms and conditions...</a>
                 <a class="dropdownLink" href="help.php"><i class="bi bi-question-circle"></i> Help</a>
                 <a class="dropdownLink" href="users/logout.php" style="text-align:center;"><i class="bi bi-box-arrow-right"></i> Logout</a>
             </div>
         <?php else: ?>
             <div class="" aria-labelledby="userMenuToggle">
-                <a class="dropdownLink" href="#"><i class="bi bi-person-fill"></i> Profile</a>
-                <a class="dropdownLink" href="#"><i class="bi bi-basket2-fill"></i> Ordered Food</a>
-                <a class="dropdownLink" href="#"><i class="bi bi-cash-coin"></i> CashOut</a>
-                <a class="dropdownLink" href="#"><i class="bi bi-cart-plus-fill"></i> Cart</a>
-                <a class="dropdownLink" href="#"><i class="bi bi-cart-plus-fill"></i> something...</a>
-                <a class="dropdownLink" href="#"><i class="bi bi-cart-plus-fill"></i> something...</a>
-                <a class="dropdownLink" href="#"><i class="bi bi-cart-plus-fill"></i> something...</a>
-                <a class="dropdownLink" href="#"><i class="bi bi-cart-plus-fill"></i> something...</a>
+                <a class="dropdownLink" href="users/login.php"><i class="bi bi-person-fill"></i> Profile</a>
+                <a class="dropdownLink" href="terms and conditions.php"><i class="bi bi-cart-plus-fill"></i> terms and conditions...</a>
                 <a class="dropdownLink" href="help.php"><i class="bi bi-question-circle"></i> Help</a>
-                <a class="dropdownLink" href="users/login.php" style="text-align:center;"><i class="bi bi-box-arrow-left"></i> Login</a>
+                <a class="dropdownLink" href="users/login.php" style="text-align:center;"><i class="bi bi-box-arrow-in-right"></i> Login</a>
             </div>
         <?php endif; ?>
 
