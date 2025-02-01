@@ -142,7 +142,7 @@ if (isset($_POST['search']) && !empty($_POST['search'])) {
                     // Check if there are rows and fetch them
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
-                    ?>        
+                    ?>
                         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                         <div class="card h-100" data-category="soups" data-price="<?php echo $row['Price']; ?>">
                             <img src="<?php echo $row['ImageURL'] ?>" class="card-img-top img-fluid" alt=" <?php echo $row['Name']?> ">
@@ -169,7 +169,6 @@ if (isset($_POST['search']) && !empty($_POST['search'])) {
                             </div>
                         </div>
                     </div>
-            
                 <?php
                     }
                     } else {

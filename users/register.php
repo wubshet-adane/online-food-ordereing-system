@@ -52,7 +52,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->bind_param('ss', $username, $email);
         $stmt->execute();
         $result = $stmt->get_result();
-        
         if ($result->num_rows > 0) {
             $message = 'Username or email already exists.';
         } else {
