@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h3><h1>here is products page plaes add something......</h1></h3>
+    <h3><h1>here is products page we will add something commingsoon......</h1></h3>
     <a href="index.html">Back to home</a>
 </body>
 </html>

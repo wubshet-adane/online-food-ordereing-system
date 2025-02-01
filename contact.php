@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <center><h1>here is contact us page please add something......</h1>
+    <center><h1>here is contact us page please we will add somethig......</h1>
     <a href="index.html">Back to home</a>
 </center>
 </body>
