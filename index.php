@@ -282,7 +282,7 @@ if (isset($_POST['search']) && !empty($_POST['search'])) {
                                                 <i class="bi bi-cart3 "></i>
                                             </button>
                                             <button class="btn btn-outline-secondary btn-sm" style="width: 40%;" title="read more">
-                                                View More
+                                                View More...
                                             </button>
                                         </div>
                                     </div>
