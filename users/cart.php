@@ -46,7 +46,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
     */
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,7 +59,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-
     <style>
     </style>
 </head>
@@ -90,13 +88,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </a>
         </div>
     </nav>
-
     <?php 
         if($totalItems > 0){
             echo '<h4>You Have Some Food Items At Your Cart, Please Check Carefuly And Order The Item............</h4>';
         }
     ?>
-
     <!-- Cart Items -->
     <div class="cart-container">
         <?php
@@ -106,7 +102,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bind_param('i', $userID);
         $stmt->execute();
         $result = $stmt->get_result();
-
         $totalPrice = 0;
         while ($row = $result->fetch_assoc()) {
             $itemTotal = $row['Quantity'] * $row['Price'];
@@ -138,11 +133,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>";
         }
         ?>
-
         <?php
             if($totalItems > 0){
         ?>
-
                 <div class="total-price">
                     <span>Total:</span>
                     <span class="totalprice"><?php echo number_format($totalPrice, 2); ?> <i>birr</i></span>
@@ -161,9 +154,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <a href="#" class="btn-checkout" title="pay from your stored money at our cafe">Countdown</a>
                         </div>
                     </div>
-                </div>
-
-                    
+                </div>    
         <?php
             }else{
         ?>
