@@ -103,23 +103,19 @@ if (!isset($_SESSION['user_loggedin'])) {
             color: #555;
             line-height: 1.5;
         }
-
         .skills, .experience {
             background: #f9f9f9;
             padding: 20px;
             border-radius: 8px;
         }
-
         .skills h4, .experience h4 {
             font-size: 18px;
             color: #2575fc;
         }
-
         .skills ul, .experience ul {
             list-style: none;
             padding: 0;
         }
-
         .skills ul li, .experience ul li {
             font-size: 16px;
             color: #333;
@@ -149,7 +145,6 @@ if (!isset($_SESSION['user_loggedin'])) {
             <p><strong>Username:</strong> <?php echo $_SESSION['username']; ?></p>
         </div>
     </div>
-
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
