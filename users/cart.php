@@ -1,7 +1,6 @@
 <?php
 session_start();
 include('../include/connection.php');
-
 // Redirect if not logged in
 if (!isset($_SESSION['user_loggedin']) || !isset($_SESSION['user_id'])) {
     header('Location: login.php');
