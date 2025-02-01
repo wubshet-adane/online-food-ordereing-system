@@ -35,7 +35,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $insertStmt->bind_param('iiid', $userID, $foodID, $quantity, $price);
         $insertStmt->execute();
     }
-
     // Free the result set and close the statement after usage
     $stmt->free_result(); // Free result set to prevent "out of sync" error
     $stmt->close();       // Close the prepared statement
