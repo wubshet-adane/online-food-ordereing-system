@@ -138,7 +138,6 @@ if (!isset($_SESSION['user_loggedin'])) {
                 <p>Need help updating your profile? <a href="../help.php" class="text-light"><i class="bi bi-question-circle"></i></a></p>
             </div>
         </div>
-
         <!-- Right Content -->
         <div class="profile-details">
             <h4>Contact Information</h4>
