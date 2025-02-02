@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>here is user profile editing page please add something.........</h1>
+    <h1>here is user profile editing page we going to add something.........</h1>
     <a href="../index.html">go back</a>
 </body>
 </html>
