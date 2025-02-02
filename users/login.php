@@ -1,10 +1,9 @@
 <?php
 session_start();
-
 //call database connection
     include "../include/connection.php";
 
-// Handle login
+// Handl login
 $message = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['username']);
@@ -46,7 +45,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->close();
     }
 }
-
 $conn->close();
 ?>
 <!DOCTYPE html>
@@ -58,7 +56,6 @@ $conn->close();
     <!-- External CSS -->
     <link rel="stylesheet" href="../css/userLogin.css">
     <style> 
-       
     </style>
 </head>
 <body>
@@ -68,31 +65,40 @@ $conn->close();
         Debre Markos University Café Ordering System
     </h2>
         <?php if (!empty($message)): ?>
-            <div class="alert alert-danger text-center"><?php echo htmlspecialchars($message); ?></div>
+        <div class="alert alert-danger text-center">
+            <?php echo htmlspecialchars($message); ?>
+        </div>
         <?php endif; ?>
-        <form method="POST" action="login.php">
-            <div class="mb-3">
-                <label for="username" class="form-label">Username</label>
-                <div class="input-group">
-                    <span class="input-group-text"><i class="bi bi-person"></i></span>
-                    <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" required>
-                </div>
+
+        <div class="login-content">
+            <div class="login-form">
+                <form method="POST" action="login.php">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-person"></i></span>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="showPassword" style="border:1px solid blue;">
+                            <label class="form-check-label" for="showPassword">Show password</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                    <p>there is no created account<a href="register.php">click here</a></p>
+                </form>
             </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <div class="input-group">
-                    <span class="input-group-text"><i class="bi bi-lock"></i></span>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
-                </div>
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="showPassword" style="border:1px solid blue;">
-                    <label class="form-check-label" for="showPassword">Show password</label>
-                </div>
+            <div class="login-image">
+                <img src="../images/login.jpg" alt="Login Image">
             </div>
-            
-            <button type="submit" class="btn btn-primary w-100">Login</button>
-            <p>there is no created account<a href="register.php">click here</a></p>
-        </form>
+        </div>
     </div>
     <script src="../javascript/passwords.js"></script>
 </body>

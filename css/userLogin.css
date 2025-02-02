@@ -1,25 +1,98 @@
- body {
-            background-image: url('https://z-p3-scontent.fadd2-1.fna.fbcdn.net/v/t39.30808-6/258410053_2942779072642419_6780024242328252411_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=TvTF0Eyxh1EQ7kNvgG3JTBQ&_nc_zt=23&_nc_ht=z-p3-scontent.fadd2-1.fna&_nc_gid=AsErKKj4ZLsxDSGK4-G7IE5&oh=00_AYCNZX7dFLxpDjqYh_NRh6L3ZMnjH7B00waAdCr-bcpdCw&oe=676F2556');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .login-container {
-            background: #FFCC00FF;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
-            width: 100%;
-            max-width: 400px;
-        }
-        .login-title {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-        .input-group-text {
-            background-color: #f1f3f5;
-        }
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #f8f9fa;
+}
+
+/* Container with Two Sections */
+.login-container {
+    width: 800px;
+    height: 450px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.login-content{
+    display: flex;
+    height: 100%;
+    background: #232346;    
+}
+
+/* Left Side (Image) */
+.login-image {
+    flex: 1;
+    background: url('../images/female.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+/* Right Side (Form) */
+.login-form {
+    background: white;
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Login Title */
+.login-title {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+/* Input Fields */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group-text {
+    background: #007bff;
+    color: white;
+    border: none;
+}
+
+.form-control {
+    border: 1px solid #ced4da;
+    padding: 10px;
+}
+
+/* Show Password Checkbox */
+.form-check-label {
+    font-size: 14px;
+}
+
+/* Login Button */
+.btn-primary {
+    background: #007bff;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+    }
+
+    .login-image {
+        height: 200px;
+    }
+}
