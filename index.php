@@ -23,7 +23,9 @@ if (isset($_POST['search']) && !empty($_POST['search'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Page</title>
     <!-- external CSS -->
+     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/topnav.css">
         <!--google fonts-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -296,15 +298,15 @@ if (isset($_POST['search']) && !empty($_POST['search'])) {
         </div>
 
     </div>
-
-    <!-- Bootstrap JS Bundle -->
-
     <!-- quantity increament and decreament-->
     <script src="javascript/addPrice.js"></script>
     <!-- bg image toogler-->
     <script src="javascript/bg toogler.js"></script>
-
-    <script src="javascript/searchingAndSorting.js">// Sorting functionality
+    <script src="javascript/searchingAndSorting.js"></script>
+    <script>
+        function toggleNav() {
+            document.querySelector(".navbar").classList.toggle("show");
+        }
     </script>
 </body>
 </html>

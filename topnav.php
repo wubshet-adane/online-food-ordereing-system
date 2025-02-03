@@ -1,12 +1,12 @@
-<nav class="navbar navbar-expand-lg navbar-light topnav">
+<nav class="topnav" id="topnav">
     <!-- Toggler/collapsing button for mobile -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" onclick="toggleNavbar()">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <!-- Navbar links container (collapsed on mobile) -->
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mx-auto"> <!-- This centers the links on larger screens -->
+    <div class="navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav"> <!-- This centers the links on larger screens -->
             <li class="nav-item">
                 <a class="nav-link" href="#">Home</a>
             </li>
@@ -59,7 +59,7 @@
         </ul>
     </div>
     <button onclick="dropdownscript()" class="dropDownButton">
-      <p class="d-flex align-items-center" href="#" id="userMenuToggle">
+      <p class="user-image" href="#" id="userMenuToggle">
           <?php
           //if useer loggedin
           if (isset($_SESSION['user_loggedin'])) {

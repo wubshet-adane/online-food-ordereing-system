@@ -1,3 +1,4 @@
+
 <?php
     // Database connection
     $host = 'localhost'; //server name is localhost.
@@ -8,4 +9,4 @@
     if ($conn->connect_error) {
         die('Database connection failed: ' . $conn->connect_error);
     }
-?>
+
