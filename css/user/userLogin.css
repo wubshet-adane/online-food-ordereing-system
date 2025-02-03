@@ -1,0 +1,150 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #f8f9fa;
+}
+
+/* Container with Two Sections */
+.login-container, .register-container {
+    width: 900px;
+    height: auto;
+    background: rgb(28, 46, 89);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Login Title */
+.login-title, .register-title {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.alert{
+    color:red;
+    font-family: cursive;
+    font-size: larger;
+    
+}
+
+.login-content{
+    display: flex;
+    height: 100%;
+    background: rgb(39, 64, 122);
+}
+
+
+/* Left Side (Form) */
+.form-section {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form {
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    gap: 20px;
+}
+
+.login-form p {
+    display: flex;
+    justify-content:space-around;
+    color: #5284ba;
+    margin-bottom: 20px;
+}
+
+.login-form p a, .register-form p a{
+    color:#00ffcc;
+    text-decoration: none;
+}
+
+.login-form p a:hover, .register-form p a:hover{
+    border-radius:10px;
+    padding: 3px;
+    color:#ffffff;
+    background-color: #00ffcc78;
+}
+
+input, button, select {
+    width:90%;
+    margin: 0 1rem;
+    border: 3px solid #ced4da;
+    border-radius: 20px;
+    outline: none;
+    font-family:cursive;
+} 
+
+/* Input Fields */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group-text {
+    background: #007bff;
+    color: white;
+    border: none;
+}
+
+.form-control {
+    border: 1px solid #ced4da;
+    padding: 10px;
+}
+
+/* Show Password Checkbox */
+.form-check-label {
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Login Button */
+.btn-primary {
+    background: #007bff;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+/* right Side (Image) */
+.login-image {
+    flex: 1;
+    background: url('../../images/login.jpg') no-repeat center center;
+    background-size: cover;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-container {
+        display: block;
+        width: 90%;
+        height: auto;
+    }
+
+    .form-section{
+        background: url('../../images/login.jpg') no-repeat center center;
+        background-size:cover;
+        padding: 20px;
+    }
+
+    .login-image {
+        display: none;
+    }
+}

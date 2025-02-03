@@ -82,36 +82,24 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register Page</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- inport external CSS used to sees like login page design -->
+    <link rel="stylesheet" href="../css/user/userLogin.css">
     <style>
-        body {
-            background-image:url('https://z-p3-scontent.fadd2-1.fna.fbcdn.net/v/t39.30808-6/258410053_2942779072642419_6780024242328252411_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=TvTF0Eyxh1EQ7kNvgG3JTBQ&_nc_zt=23&_nc_ht=z-p3-scontent.fadd2-1.fna&_nc_gid=AsErKKj4ZLsxDSGK4-G7IE5&oh=00_AYCNZX7dFLxpDjqYh_NRh6L3ZMnjH7B00waAdCr-bcpdCw&oe=676F2556');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            background-attachment: fixed;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .register-container {
-            background: #FFCC00FF;            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);            width: 100%;
-            max-width: 500px;
-        }
-        .register-title {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-        .input-group-text {
-            background-color: #f1f3f5;
-        }
-        .custom-file-input {
-            display: block;
-            margin-top: 10px;
-        }
+       body{
+        height: 100%;
+       }
+       .register-form{
+        color: #fff;
+        text-align: left;
+        width: 100%;
+        max-width: 400px;
+        padding: 20px;
+        border-radius: 10px;
+        gap: 20px;
+    }
+    label{
+        margin-left: 30px;
+    }
     </style>
 </head>
 <body>
@@ -119,86 +107,100 @@ $conn->close();
         <h2 class="register-title text-center text-uppercase fw-bold text-success mb-4">
             <i class="bi bi-person-plus me-2"></i> Register for Debre Markos University Café Ordering System 
         </h2>
-        <?php if (!empty($message)): ?>
-            <div class="alert alert-info text-center text-danger"><?php echo htmlspecialchars($message); ?></div>
-        <?php endif; ?>
-        <form method="POST" action="register.php" enctype="multipart/form-data" id="registerForm">
-            <div class="mb-3">
-                <label for="first_name" class="form-label">First Name</label>
-                <div class="input-group">
-                    <span class="input-group-text"><i class="bi bi-person"></i></span>
-                    <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter your first name" required>
-                </div>
+        
+        <div class="login-content">
+            <div class="form-section">
+                <?php if (!empty($message)): ?>
+                    <div class="alert alert-info text-center text-danger"><?php echo htmlspecialchars($message); ?></div>
+                <?php endif; ?>
+                
+                <form method="POST" class="register-form" action="register.php" enctype="multipart/form-data" id="registerForm">
+                    <div class="mb-3">
+                        <label for="first_name" class="form-label">First Name</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-person"></i></span>
+                            <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter your first name" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="last_name" class="form-label">Last Name</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-person"></i></span>
+                            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter your last name" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-person-badge"></i></span>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Choose a username" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="age" class="form-label">Age</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-calendar"></i></span>
+                            <input type="number" class="form-control" id="age" name="age" placeholder="Enter your age" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="sex" class="form-label">Sex</label>
+                        <div class="input-group">
+                            <select class="form-select" id="sex" name="sex" required>
+                                <option value="">Select your gender:</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="job" class="form-label">Job</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-briefcase"></i></span>
+                            <input type="text" class="form-control" id="job" name="job" placeholder="Enter your job" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="profile_image" class="form-label">Profile Image</label>
+                        <input type="file" class="form-control" id="profile_image" name="profile_image">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Create a password" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirm_password" class="form-label">Confirm Password</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+                            <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="showPassword" style="border:1px solid blue;">
+                            <span class="form-check-label" for="showPassword">Show password</span>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Register</button>
+                    <p>are you registered ?<a href="login.php">click here</a></p>
+                </form>
             </div>
-            <div class="mb-3">
-                <label for="last_name" class="form-label">Last Name</label>
-                <div class="input-group">
-                    <span class="input-group-text"><i class="bi bi-person"></i></span>
-                    <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter your last name" required>
-                </div>
+
+            
+            <div class="login-image">
+
             </div>
-            <div class="mb-3">
-                <label for="username" class="form-label">Username</label>
-                <div class="input-group">
-                    <span class="input-group-text"><i class="bi bi-person-badge"></i></span>
-                    <input type="text" class="form-control" id="username" name="username" placeholder="Choose a username" required>
-                </div>
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <div class="input-group">
-                    <span class="input-group-text"><i class="bi bi-envelope"></i></span>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
-                </div>
-            </div>
-            <div class="mb-3">
-                <label for="age" class="form-label">Age</label>
-                <div class="input-group">
-                    <span class="input-group-text"><i class="bi bi-calendar"></i></span>
-                    <input type="number" class="form-control" id="age" name="age" placeholder="Enter your age" required>
-                </div>
-            </div>
-            <div class="mb-3">
-                <label for="sex" class="form-label">Sex</label>
-                <select class="form-select" id="sex" name="sex" required>
-                    <option value="">Select your gender:</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Other">Other</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label for="job" class="form-label">Job</label>
-                <div class="input-group">
-                    <span class="input-group-text"><i class="bi bi-briefcase"></i></span>
-                    <input type="text" class="form-control" id="job" name="job" placeholder="Enter your job" required>
-                </div>
-            </div>
-            <div class="mb-3">
-                <label for="profile_image" class="form-label">Profile Image</label>
-                <input type="file" class="form-control" id="profile_image" name="profile_image">
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <div class="input-group">
-                    <span class="input-group-text"><i class="bi bi-lock"></i></span>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Create a password" required>
-                </div>
-            </div>
-            <div class="mb-3">
-                <label for="confirm_password" class="form-label">Confirm Password</label>
-                <div class="input-group">
-                    <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
-                    <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required>
-                </div>
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="showPassword" style="border:1px solid blue;">
-                    <label class="form-check-label" for="showPassword">Show password</label>
-                </div>
-            </div>
-            <button type="submit" class="btn btn-success w-100">Register</button>
-            <p>are you registered ?<a href="login.php">click here</a></p>
-        </form>
+        </div>
+        
     </div>
 
     <script>

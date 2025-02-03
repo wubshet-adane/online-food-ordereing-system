@@ -54,9 +54,7 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <!-- External CSS -->
-    <link rel="stylesheet" href="../css/userLogin.css">
-    <style> 
-    </style>
+    <link rel="stylesheet" href="../css/user/userLogin.css">
 </head>
 <body>
     <div class="login-container">
@@ -64,15 +62,17 @@ $conn->close();
         <i class="bi bi-shop me-2"></i><br> 
         Debre Markos University Café Ordering System
     </h2>
-        <?php if (!empty($message)): ?>
-        <div class="alert alert-danger text-center">
-            <?php echo htmlspecialchars($message); ?>
-        </div>
-        <?php endif; ?>
-
+    <!--form and image setion container-->
         <div class="login-content">
-            <div class="login-form">
-                <form method="POST" action="login.php">
+      <!--left side form section-->
+            <div class="form-section">
+                <?php if (!empty($message)): ?>
+                    <div class="alert alert-danger">
+                        <?php echo htmlspecialchars($message); ?>
+                    </div>
+                <?php endif; ?>
+        <!--for section-->
+                <form method="POST" action="login.php" class="login-form">
                     <div class="mb-3">
                         <label for="username" class="form-label">Username</label>
                         <div class="input-group">
@@ -83,20 +83,20 @@ $conn->close();
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
                         <div class="input-group">
-                            <span class="input-group-text"><i class="bi bi-lock"></i></span>
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+                            <div>
+                                <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+                            </div>
                         </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="showPassword" style="border:1px solid blue;">
-                            <label class="form-check-label" for="showPassword">Show password</label>
-                        </div>
+                        <input type="checkbox" class="form-check-input" id="showPassword" style="border:1px solid blue;">Show password
                     </div>
-                    <button type="submit" class="btn btn-primary w-100">Login</button>
-                    <p>there is no created account<a href="register.php">click here</a></p>
+                    <button type="submit" class="btn-primary">Login</button>
+                    <p><a href="forgotPassword.php">Forgot Password</a><a href="register.php">Create Account?</a></p>
                 </form>
             </div>
+    <!--right side image section-->
             <div class="login-image">
-                <img src="../images/login.jpg" alt="Login Image">
+
             </div>
         </div>
     </div>
