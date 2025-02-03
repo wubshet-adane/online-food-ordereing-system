@@ -1,20 +1,26 @@
 /* General Page Styling */
 body {
+    background-image: url('../../images/loginBackground.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: #f8f9fa;
 }
+
+
 
 /* Container with Two Sections */
 .login-container, .register-container {
     width: 900px;
     height: auto;
-    background: rgb(28, 46, 89);
-    border-radius: 10px;
+    background: rgba(28, 46, 89, 0.463);
+    border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
@@ -36,7 +42,7 @@ body {
 .login-content{
     display: flex;
     height: 100%;
-    background: rgb(39, 64, 122);
+    background: rgba(39, 64, 122, 0.485);
 }
 
 
@@ -126,6 +132,7 @@ input, button, select {
 
 /* right Side (Image) */
 .login-image {
+    border-radius:20px;
     flex: 1;
     background: url('../../images/login.jpg') no-repeat center center;
     background-size: cover;
