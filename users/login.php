@@ -41,7 +41,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } else {
             $message = 'Invalid username or password.';
         }
-        
         $stmt->close();
     }
 }
