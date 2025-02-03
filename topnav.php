@@ -69,7 +69,7 @@
                 <img src="<?php echo $_SESSION['image'];?>" title="<?php echo $_SESSION['firstName'].' ' . $_SESSION['lastName']; ?>" alt='User Img' style="width: 50px; height: 50px; border-radius:50%;">
             <?php
             }
-            //if user ha not profile imaage
+            //if user have not profile imaage
             else {
                 if($_SESSION['sex'] == 'Male'){
                     ?>
