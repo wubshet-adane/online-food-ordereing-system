@@ -89,9 +89,10 @@ body {
 }
 
 .menu-category .row{
+    
     display: flex;
     flex-direction: row;
-    background: linear-gradient(45deg, rgb(0, 255, 229), rgb(21, 0, 97));
+    background: linear-gradient(45deg, rgb(147, 222, 214), rgb(21, 0, 97));
     justify-content:space-around;
     padding: 2rem;
 }
