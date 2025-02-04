@@ -60,25 +60,29 @@ if (isset($_POST['search']) && !empty($_POST['search'])) {
         </div>
         <!-- Filter Section -->
         <section class="filter-section">
-            <label for="categories" class="me-2">Categories:</label>
-            <select id="categories" class="filter-form-select">
-                <option value="all">All</option>
-                <option value="soups">Fasting food (የጾም ምግቦች)</option>
-                <option value="soups">Fast food (ፈጣን ምግቦች)</option>
-                <option value="salads">Rich Food (የፍስክ ምግቦች)</option>
-                <option value="drinks">Drinks</option>
-                <option value="drinks">Hot Drinks(ሻይ፣ ቡና፣ ወተት፣ ....)</option>
-                <option value="appetizers">Vegitables</option>
-                <option value="desserts">Desserts</option>
-                <option value="others">Others</option>
-            </select>
-            <label for="sort" class="me-2">Sort By:</label>
-            <select id="sort" class="filter-form-sort">
-                <option value="name_asc">Name: A to Z</option>
-                <option value="name_desc">Name: Z to A</option>
-                <option value="price_low_high">Price: Low to High</option>
-                <option value="price_high_low">Price: High to Low</option>
-            </select>
+            <div class="catagory-select">
+                <label for="categories" class="me-2">Categories:</label>
+                <select id="categories" class="filter-form-select">
+                    <option value="all">All</option>
+                    <option value="soups">Fasting food (የጾም ምግቦች)</option>
+                    <option value="soups">Fast food (ፈጣን ምግቦች)</option>
+                    <option value="salads">Rich Food (የፍስክ ምግቦች)</option>
+                    <option value="drinks">Drinks</option>
+                    <option value="drinks">Hot Drinks(ሻይ፣ ቡና፣ ወተት፣ ....)</option>
+                    <option value="appetizers">Vegitables</option>
+                    <option value="desserts">Desserts</option>
+                    <option value="others">Others</option>
+                </select>
+            </div>
+            <div class="catagory-sort">
+                <label for="sort" class="me-2">Sort By:</label>
+                <select id="sort" class="filter-form-sort">
+                    <option value="name_asc">Name: A to Z</option>
+                    <option value="name_desc">Name: Z to A</option>
+                    <option value="price_low_high">Price: Low to High</option>
+                    <option value="price_high_low">Price: High to Low</option>
+                </select>
+            </div>
         </section>
 
         <!-- Menu Section -->

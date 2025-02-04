@@ -62,6 +62,7 @@ $conn->close();
             <i class="bi bi-shop me-2"></i><br> 
             Debre Markos University Café Ordering System
         </h2>
+        <hr>
         <!--form and image setion container-->
             <div class="login-content">
         <!--left side form section-->

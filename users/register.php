@@ -107,7 +107,7 @@ $conn->close();
         <h2 class="register-title text-center text-uppercase fw-bold text-success mb-4">
             <i class="bi bi-person-plus me-2"></i> Register for Debre Markos University Café Ordering System 
         </h2>
-        
+        <hr style="height:4px; background-color:white;">
         <div class="login-content">
             <div class="form-section">
                 <?php if (!empty($message)): ?>
@@ -147,7 +147,7 @@ $conn->close();
                         <label for="age" class="form-label">Age</label>
                         <div class="input-group">
                             <span class="input-group-text"><i class="bi bi-calendar"></i></span>
-                            <input type="number" class="form-control" id="age" name="age" placeholder="Enter your age" required>
+                            <input type="number" class="form-control" id="age" name="age" min="10" max="100" placeholder="Enter your age" required>
                         </div>
                     </div>
                     <div class="mb-3">

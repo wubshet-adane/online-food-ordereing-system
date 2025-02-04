@@ -17,10 +17,10 @@ body {
 .login-container, .register-container {
     width: 900px;
     height: auto;
-    background: rgba(28, 46, 89, 0.611);
+    background: rgba(28, 46, 89, 0.511);
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
 }
 
 /* Login Title */
@@ -72,12 +72,18 @@ body {
 .login-form p a, .register-form p a{
     color:#00ffcc;
     text-decoration: none;
+    font-weight: 50;
 }
 
 .login-form p a:hover, .register-form p a:hover{
     border-radius:10px;
     color:#ffffff;
     background-color: #00ffcc38;
+}
+
+.form-label{
+    color: #ffffff;
+    font-weight: bolder;
 }
 
 input, button, select {
@@ -90,6 +96,14 @@ input, button, select {
     outline: none;
     font-family:cursive;
 } 
+
+input{
+}
+
+input:focus, button:focus, select:focus {
+    border: 3px solid #007bff;
+    background-color: #000000;
+}
 
 /* Input Fields */
 .input-group {
