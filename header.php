@@ -8,7 +8,7 @@
     </div>
     <!--search-->
     <form action="other Functionalities/searching.php" method="post" name="searchingForm">
-        <div class="search-bar justify-content-center mx-auto">
+        <div class="search-bar">
             <input type="text" placeholder="Search" name="search" id="search">
             <button type="button" name="searchBtn" id="searchBtn">
             <i class="bi bi-search"></i>

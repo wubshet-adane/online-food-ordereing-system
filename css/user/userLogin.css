@@ -84,6 +84,8 @@ input, button, select {
     width:90%;
     margin: 0 1rem;
     border: 3px solid #ced4da;
+    background:none;
+    color: #ffffff;
     border-radius: 20px;
     outline: none;
     font-family:cursive;

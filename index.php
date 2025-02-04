@@ -32,43 +32,7 @@ if (isset($_POST['search']) && !empty($_POST['search'])) {
         <link href="https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap" rel="stylesheet">
 
     <style>
-        .search-bar {
-            background-color:#fff;
-            display: flex;
-            align-items: center;
-            border-radius: 30px;
-            padding: 0px 15px;
-            max-width:400px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-            }
-
-        .search-bar input {
-            background: transparent;
-            border: none;
-            outline: none;
-            width: 100%;
-            font-size: 16px;
-            padding: 8px;
-            }
-
-        .search-bar button {
-            background: transparent;
-            border: none;
-            font-size: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            }
-
-        .search-bar button {
-            color: #11e;
-            font-size: 30px;
-            padding: 0;
-            }
-
-        .search-bar button:hover {
-            color: #FFEE00FF;
-            }
+      
     </style>
 </head>
 
@@ -138,10 +102,10 @@ if (isset($_POST['search']) && !empty($_POST['search'])) {
                             if ($result->num_rows > 0) {
                                 while ($row = $result->fetch_assoc()) {
                             ?>
-                                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                                <div class="col-sm-6">
                                     <div class="card h-100" data-category="soups" data-price="<?php echo $row['Price']; ?>">
                                         <img src="<?php echo $row['ImageURL'] ?>" class="card-img-top img-fluid" alt=" <?php echo $row['Name']?> ">
-                                        <div class="card-body d-flex flex-column">
+                                        <div class="card-body">
                                             <h5 class="card-title fw-semibold"> <?php echo $row['Name']?> </h5>
                                             <p class="card-text"> <?php echo $row['Description']?> </p>
                                             <p class="card-text"><strong> <?php echo $row['Price']?> birr </strong></p>
