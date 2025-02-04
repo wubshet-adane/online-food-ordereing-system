@@ -82,7 +82,7 @@ if (isset($_POST['search']) && !empty($_POST['search'])) {
         <div class="accordion" id="accordionExample">
             <div class="accordion-item">
                 <h2 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <button class="accordion-button" type="button">
                         Recommendation Based on Your Order History:
                     </button>
                 </h2>
@@ -95,9 +95,9 @@ if (isset($_POST['search']) && !empty($_POST['search'])) {
            
         </div>
         <!-- Filter Section -->
-        <section class="d-flex justify-content-center my-4">
+        <section class="filter-section">
             <label for="categories" class="me-2">Categories:</label>
-            <select id="categories" class="form-select w-25 me-2">
+            <select id="categories" class="filter-form-select">
                 <option value="all">All</option>
                 <option value="soups">Fasting food (የጾም ምግቦች)</option>
                 <option value="soups">Fast food (ፈጣን ምግቦች)</option>
@@ -109,7 +109,7 @@ if (isset($_POST['search']) && !empty($_POST['search'])) {
                 <option value="others">Others</option>
             </select>
             <label for="sort" class="me-2">Sort By:</label>
-            <select id="sort" class="form-select w-25">
+            <select id="sort" class="filter-form-sort">
                 <option value="name_asc">Name: A to Z</option>
                 <option value="name_desc">Name: Z to A</option>
                 <option value="price_low_high">Price: Low to High</option>
@@ -118,7 +118,7 @@ if (isset($_POST['search']) && !empty($_POST['search'])) {
         </section>
 
         <!-- Menu Section -->
-        <div id="menu-items" class="container my-4">
+        <div id="menu-items" class="menu-container">
             <!-- Soups Section -->
             <section class="menu-category" id="soups">
                 <h2 class="text-center my-4">Soups</h2>

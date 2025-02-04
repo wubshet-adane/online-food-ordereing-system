@@ -5,3 +5,31 @@
     padding-right: 15px;
     padding-left: 15px;
 }
+
+.menu-container{
+    display: block;
+    justify-content: center;
+}
+
+.menu-category{
+    display: block;
+}
+
+.menu-category .row{
+    display: flex;
+    flex-direction: row;
+    border:2px solid rgb(51, 0, 255);
+    justify-content: space-around;
+}
+
+.col-sm-6{
+    width: 20%;
+    display: block;
+    border:2px solid blue;
+    border-radius: 10px;
+    
+}
+
+.card-img-top{
+    max-width: 100%;
+}
