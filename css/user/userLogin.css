@@ -26,8 +26,9 @@ body {
 /* Login Title */
 .login-title, .register-title {
     text-align: center;
-    color: #0051ff;
+    color: #ffffff;
     margin-bottom: 20px;
+    font-size: 2em;
 }
 
 .alert{
@@ -75,9 +76,8 @@ body {
 
 .login-form p a:hover, .register-form p a:hover{
     border-radius:10px;
-    padding: 3px;
     color:#ffffff;
-    background-color: #00ffcc78;
+    background-color: #00ffcc38;
 }
 
 input, button, select {
