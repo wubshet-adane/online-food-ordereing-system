@@ -20,6 +20,7 @@
     flex-direction: row;
     border:2px solid rgb(51, 0, 255);
     justify-content: space-around;
+    padding: 2rem;
 }
 
 .col-sm-6{
