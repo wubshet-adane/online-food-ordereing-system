@@ -7,16 +7,13 @@ body {
 .topnav{    
     background-color: #091623b8; /* Dark blue-gray background */
     position:relative;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
     border-radius:10px; 
     padding: 5px;
     margin: auto;
     border: 2px solid #050b1db8;
-}
-
-.navbar-collapse{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
 }
 
 .navbar-nav{
@@ -35,6 +32,7 @@ body {
     font-size: 18px;
     text-decoration: none;
     margin:2px 0;
+    color: rgb(255, 255, 255);
 
 }
 
