@@ -4,7 +4,6 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    
     <!-- Navbar links container (collapsed on mobile) -->
     <div class="navbar-collapse" id="navbarNav">
         <ul class="navbar-nav"> <!-- This centers the links on larger screens -->
