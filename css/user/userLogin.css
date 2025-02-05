@@ -38,12 +38,16 @@ body {
 }
 
 .login-content{
+    box-sizing:border-box;
     display: flex;
     height: 100%;
+    width: 100%;
 }
 
 /* Left Side (Form) */
 .form-section {
+    box-sizing:border-box;
+    width:50%;
     flex: 1;
     padding: 40px;
     display: flex;
@@ -97,9 +101,6 @@ input, button, select {
     font-family:cursive;
 } 
 
-input{
-}
-
 input:focus, button:focus, select:focus {
     border: 3px solid #007bff;
     background-color: #000000;
@@ -152,11 +153,13 @@ input:focus, button:focus, select:focus {
 @media (max-width: 768px) {
     .login-container {
         display: block;
-        width: 90%;
-        height: auto;
+        height: 100%;
+        width: 100%;
     }
 
     .form-section{
+        height: 100%;
+        width:100%;
         background-size:cover;
         padding: 20px;
     }
