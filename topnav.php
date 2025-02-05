@@ -17,7 +17,7 @@
                 <a class="nav-link" href="products.php">Products</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="contact.php">Contact Us</a>
+                <a class="nav-link" href="contact.php">Contactus</a>
             </li>
             <li class="nav-item" >
                 <a class="nav-link" href="users/cart.php">
@@ -53,7 +53,7 @@
                             }
                         ?>
                     </i>
-                    cart
+                    Cart
                 </a>
             </li>
         </ul>

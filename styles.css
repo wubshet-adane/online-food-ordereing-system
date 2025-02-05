@@ -32,9 +32,10 @@ body {
 }
 
 .nav-link{
+    font-size: 18px;
     text-decoration: none;
     margin:2px 0;
-    
+
 }
 
 
@@ -96,14 +97,6 @@ body {
     background-color:#44444400;
 }
 
-.nav-link{
-    font-family:fantasy;
-    font-size: larger;
-    color: white; /* White text */
-}
-.nav-item:hover, navbar a .login:hover{
-    border:1px solid rgb(0, 187, 255); 
-}
 
 .nav-link:hover{
     color: rgb(0, 187, 255); /* White text */
