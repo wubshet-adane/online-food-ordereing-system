@@ -110,24 +110,29 @@ if (isset($_POST['search']) && !empty($_POST['search'])) {
                                     <div class="card h-100" data-category="soups" data-price="<?php echo $row['Price']; ?>">
                                         <img src="<?php echo $row['ImageURL'] ?>" class="card-img-top img-fluid" alt=" <?php echo $row['Name']?> ">
                                         <div class="card-body">
-                                            <h5 class="card-title fw-semibold"> <?php echo $row['Name']?> </h5>
-                                            <p class="card-text"> <?php echo $row['Description']?> </p>
-                                            <p class="card-text"><strong> <?php echo $row['Price']?> birr </strong></p>
-                                            <div class="d-flex align-items-center mb-3">
-                                                <label for="quantity-salad1" class="me-2 mb-0">Quantity:</label>
-                                                <div class="input-group w-40">
-                                                    <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="decrementQuantity('<?php echo ''; ?>')">−</button>
-                                                    <input id="quantity-salad2" type="text" class="form-control text-center" value="1" min="1" max="10" style="max-width:50px;">
-                                                    <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="incrementQuantity('quantity-salad2')"><i class="bi bi-caret-right-square"></i></button>
+                                            <h5 class="card-title"> <?php echo $row['Name']?> </h5>
+                                            <p class="card-price">Price: <strong> <?php echo $row['Price']?> birr </strong></p>
+                                           
+                                            <div class="hidden-pay-content">
+                                                <!--
+                                                <p class="card-text"> <?php echo $row['Description']?> </p>
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <label for="quantity-salad1" class="me-2 mb-0">Quantity:</label>
+                                                    <div class="input-group w-40">
+                                                        <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="decrementQuantity('<?php echo ''; ?>')">−</button>
+                                                        <input id="quantity-salad2" type="text" class="form-control text-center" value="1" min="1" max="10" style="max-width:50px;">
+                                                        <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="incrementQuantity('quantity-salad2')"><i class="bi bi-caret-right-square"></i></button>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="mt-auto d-flex justify-content-between">
-                                                <button class="btn btn-outline-secondary btn-sm" style="width: 40%;" title="add to cart">
-                                                    <i class="bi bi-cart3 "></i>
-                                                </button>
-                                                <button class="btn btn-outline-secondary btn-sm" style="width: 40%;" title="read more">
-                                                    View More
-                                                </button>
+                                                -->
+                                                <div class="pay-button">
+                                                    <button class="add-to-cart-btn pay-btn-list" title="add to cart">
+                                                        Add To Cart
+                                                    </button>
+                                                    <button class="read-more-btn pay-btn-list" title="read more">
+                                                        View More
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

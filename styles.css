@@ -13,6 +13,31 @@ body {
     border: 2px solid #050b1db8;
 }
 
+.navbar-collapse{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.navbar-nav{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-decoration: none;
+}
+
+.nav-item{
+    margin: 0 1rem;
+}
+
+.nav-link{
+    text-decoration: none;
+    margin:2px 0;
+    
+}
+
+
 /* Positioning the user dropdown */
 #userDropdown {
     position: absolute; /* Positions it relative to the nearest positioned ancestor */
