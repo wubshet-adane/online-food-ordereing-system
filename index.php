@@ -111,7 +111,7 @@ if (isset($_POST['search']) && !empty($_POST['search'])) {
                                         <img src="<?php echo $row['ImageURL'] ?>" class="card-img-top img-fluid" alt=" <?php echo $row['Name']?> ">
                                         <div class="card-body">
                                             <h5 class="card-title"> <?php echo $row['Name']?> </h5>
-                                            <p class="card-price">Price: <strong> <?php echo $row['Price']?> birr </strong></p>
+                                            <p class="card-price">Price: <strong> <?php echo $row['Price']?> </strong>Birr</p>
                                            
                                             <div class="hidden-pay-content">
                                                 <!--
