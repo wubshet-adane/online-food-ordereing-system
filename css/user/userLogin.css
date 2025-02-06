@@ -47,7 +47,7 @@ body {
 /* Left Side (Form) */
 .form-section {
     box-sizing:border-box;
-    width:50%;
+    width:49%;
     flex: 1;
     padding: 40px;
     display: flex;
@@ -144,6 +144,7 @@ input:focus, button:focus, select:focus {
 
 /* right Side (Image) */
 .login-image {
+    box-sizing:border-box;
     border-radius:20px;
     flex: 1;
     background: url('../../images/login.jpg') no-repeat center center;
