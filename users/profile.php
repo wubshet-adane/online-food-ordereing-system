@@ -20,6 +20,7 @@ if (!isset($_SESSION['user_loggedin'])) {
        
     </style>
 </head>
+
 <body>
     <div class="profile-container">
         <!-- Left Sidebar -->
