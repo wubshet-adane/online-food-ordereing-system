@@ -26,7 +26,6 @@ if (!isset($_SESSION['user_loggedin'])) {
         <!-- Left Sidebar -->
         <div class="profile-sidebar">
             <a href="editUserProfile.php" class="edit-badge"><i> Edit</i></a>
-
             <?php
             //if user logged in
                 if(isset($_SESSION['image'])){
