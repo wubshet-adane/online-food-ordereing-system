@@ -1,6 +1,6 @@
 document.getElementById('sort').addEventListener('change', function () {
     const sortValue = this.value;
-    const menuItems = Array.from(document.querySelectorAll('.menu-category .card'));
+    const menuItems = Array.from(document.querySelectorAll('.menu-category .col-sm-6'));
     
     menuItems.sort((a, b) => {
         const nameA = a.querySelector('.card-title').textContent.trim();

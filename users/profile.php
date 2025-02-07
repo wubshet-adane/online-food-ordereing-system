@@ -26,25 +26,23 @@ if (!isset($_SESSION['user_loggedin'])) {
         <div class="profile-sidebar">
             <a href="editUserProfile.php" class="edit-badge"><i> Edit</i></a>
 
-            <img src="../<?php echo $_SESSION['image'];?>" alt="hhhhh">
-
             <?php
             //if user logged in
                 if(isset($_SESSION['image'])){
                 ?>
-                    <img src="../<?php echo $_SESSION['image'];?>" title="<?php echo $_SESSION['firstName'].' ' . $_SESSION['lastName']; ?>" alt='User Img' style="width: 50px; height: 50px; border-radius:50%;">
+                    <img src="../<?php echo $_SESSION['image'];?>" title="<?php echo $_SESSION['firstName'].' ' . $_SESSION['lastName']; ?>" alt='User Img'>
                 <?php
                 }
             //if user have not profile imaage
                 else {
                     if($_SESSION['sex'] == 'Male'){
                         ?>
-                            <img src="../images/male.jpg" title="<?php echo $_SESSION['firstName'].' ' . $_SESSION['lastName']; ?>" alt='User Img1' style="width: 50px; height: 50px; border-radius:50%;">
+                            <img src="../images/male.jpg" title="<?php echo $_SESSION['firstName'].' ' . $_SESSION['lastName']; ?>" alt='User Img1'>
                         <?php
                     }
                     else{
                         ?>
-                            <img src="../images/female.jpg" title="<?php echo $_SESSION['firstName'].' ' . $_SESSION['lastName']; ?>" alt='User Img2' style="width: 50px; height: 50px; border-radius:50%;">
+                            <img src="../images/female.jpg" title="<?php echo $_SESSION['firstName'].' ' . $_SESSION['lastName']; ?>" alt='User Img2'>
                         <?php
                     }
                 }

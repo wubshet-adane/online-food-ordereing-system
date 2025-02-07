@@ -66,7 +66,7 @@ body {
 .filter-section div select{
     font-size: 0.7rem;
     color: #0084ff;
-    border-radius: 10px;
+    border-radius: 3px;
     padding: 0.2rem;
 }
 
@@ -86,28 +86,30 @@ body {
 .menu-category .row{
     display: flex;
     flex-direction: row;
-    background: linear-gradient(135deg, rgba(0, 0, 255, 0.398), rgba(77, 77, 77, 0.62));
-    justify-content:space-around;
+    flex-wrap: wrap;
+    background: linear-gradient(135deg, rgb(239, 239, 255), rgb(231, 255, 255));
+    justify-content:center;
     padding: 2rem;
+    width: 100%;
 }
 
 .col-sm-6{
     position: relative;
     background-color: white;
-    width: 25%;
-    margin: 0.5rem;
+    width: calc(100% / 4 - 3rem); 
+    margin: 2rem 1rem;
     display: block;
-    border-radius: 10px;
+    border-radius: 5px;
     animation:ease-in-out;
     animation-fill-mode: forwards;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+    border: 1px solid #b3b1b1;
 }
 
 .card-img-top{
     width:fit-content;
     max-width: 100%;
     height: 200px;
-    border-radius: 10px 10px 0 0;
+    border-radius: 5px 5px 0 0;
 }
 
 .card-body{
@@ -144,7 +146,11 @@ body {
     display:none;
     background: white;
     height: 40px;
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 5px 5px;
+    border-top: none;
+    border-bottom: 1px solid #b3b1b1;
+    border-left: 1px solid #b3b1b1;
+    border-right: 1px solid #b3b1b1;
 }
 
 .card-body:hover{
@@ -163,9 +169,7 @@ body {
 
 .pay-btn-list{
     box-sizing:border-box;
-    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.3);
     color: white;
-    border: none;
     width: fit-content;
     padding: 4px 8px;
     font-size: 15px;

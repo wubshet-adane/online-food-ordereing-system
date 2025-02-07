@@ -84,7 +84,7 @@ if (isset($_POST['search']) && !empty($_POST['search'])) {
                 </select>
             </div>
             <div class="view-style">
-                <label for="view-as">View</label>
+                <label for="view-as">View as</label>
                 <select name="viewstyle" id="viewstyle">
                     <option value="">land scape</option>
                     <option value="">portrate</option>
@@ -94,12 +94,12 @@ if (isset($_POST['search']) && !empty($_POST['search'])) {
 
         <!-- Menu Section -->
         <div id="menu-items" class="menu-container">
-            <!-- Soups Section -->
-            <section class="menu-category" id="soups">
-                <h2 class="text-center my-4">Soups</h2>
+            <!-- Rich-food Section -->
+            <section class="menu-category" id="rich-food">
+                <h2 class="text-center my-4">Rich foods (የፍስክ ምግቦች):</h2>
                 <div class="row g-3">
                     <?php
-                        $category = "Soups"; // Corrected variable name spelling
+                        $category = "rich-food"; // Corrected variable name spelling
                         $stmt = $conn->prepare("SELECT * FROM food WHERE Category = ?");
                     // Check if the statement was prepared successfully
                         if ($stmt) {
@@ -114,7 +114,7 @@ if (isset($_POST['search']) && !empty($_POST['search'])) {
                                 while ($row = $result->fetch_assoc()) {
                             ?>
                                 <div class="col-sm-6">
-                                    <div class="card h-100" data-category="soups" data-price="<?php echo $row['Price']; ?>">
+                                    <div class="card" data-category="soups" data-price="<?php echo $row['Price']; ?>">
                                         <img src="<?php echo $row['ImageURL'] ?>" class="card-img-top img-fluid" alt=" <?php echo $row['Name']?> ">
                                         <div class="card-body">
                                             <h5 class="card-title"> <?php echo $row['Name']?> </h5>
@@ -159,31 +159,35 @@ if (isset($_POST['search']) && !empty($_POST['search'])) {
                 </div>
             </section>
 
-            <!-- Salads Section -->
-            <section class="menu-category" id="salads">
-                <h2 class="text-center my-4">Salads</h2>
+             <!-- Vegitables Section -->
+             <section class="menu-category" id="salad">
+                <h2 class="text-center my-4">Vegitables and related meals:</h2>
                 <div class="row g-3">
-                            
                     <?php
-                        $catagory = "Salad";
-                        $stmt = $conn -> prepare("SELECT * FROM food WHERE Category = ?");
-                        //check if the statement was prepare successfuly
-                        if($stmt){
-                            $stmt -> bind_param("s", $catagory);
-                            $stmt -> execute();
-                            $result = $stmt -> get_result();
-                            //check if there are the value in the table or not
-                            if($result -> num_rows > 0){
-                                while($row = $result -> fetch_assoc()){
-                                ?>
+                        $category = "Vegitable"; // Corrected variable name spelling
+                        $stmt = $conn->prepare("SELECT * FROM food WHERE Category = ?");
+                    // Check if the statement was prepared successfully
+                        if ($stmt) {
+                            $stmt->bind_param("s", $category);
+                            $stmt->execute();
 
-                                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                                        <div class="card h-100" data-category="soups" data-price="<?php echo $row['Price']; ?>">
-                                            <img src="<?php echo $row['ImageURL'] ?>" class="card-img-top img-fluid" alt=" <?php echo $row['Name']?> ">
-                                            <div class="card-body d-flex flex-column">
-                                                <h5 class="card-title fw-semibold"> <?php echo $row['Name']?> </h5>
+                            // Get the result
+                            $result = $stmt->get_result();
+
+                            // Check if there are rows and fetch them
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                            ?>
+                                <div class="col-sm-6">
+                                    <div class="card" data-category="soups" data-price="<?php echo $row['Price']; ?>">
+                                        <img src="<?php echo $row['ImageURL'] ?>" class="card-img-top img-fluid" alt=" <?php echo $row['Name']?> ">
+                                        <div class="card-body">
+                                            <h5 class="card-title"> <?php echo $row['Name']?> </h5>
+                                            <p class="card-price">Price: <strong> <?php echo $row['Price']?> </strong>Birr</p>
+                                           
+                                            <div class="hidden-pay-content">
+                                                <!--
                                                 <p class="card-text"> <?php echo $row['Description']?> </p>
-                                                <p class="card-text"><strong> <?php echo $row['Price']?> birr </strong></p>
                                                 <div class="d-flex align-items-center mb-3">
                                                     <label for="quantity-salad1" class="me-2 mb-0">Quantity:</label>
                                                     <div class="input-group w-40">
@@ -192,77 +196,21 @@ if (isset($_POST['search']) && !empty($_POST['search'])) {
                                                         <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="incrementQuantity('quantity-salad2')"><i class="bi bi-caret-right-square"></i></button>
                                                     </div>
                                                 </div>
-                                                <div class="mt-auto d-flex justify-content-between">
-                                                    <button class="btn btn-outline-secondary btn-sm" style="width: 40%;" title="add to cart">
-                                                        <i class="bi bi-cart3 "></i>
+                                                -->
+                                                <div class="pay-button">
+                                                    <button class="add-to-cart-btn pay-btn-list" title="add to cart">
+                                                        Add To Cart
                                                     </button>
-                                                    <button class="btn btn-outline-secondary btn-sm" style="width: 40%;" title="read more">
+                                                    <button class="read-more-btn pay-btn-list" title="read more">
                                                         View More
                                                     </button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                            
-                                <?php
-                                    }
-                                } else {
-                                    echo "<p style='color:red;'>No results found for the selected category.</p>";
-                                }
-
-                                // Close the statement
-                                $stmt->close();
-                            } else {
-                                echo "<p style='color:red;'>Error in preparing the statement:</p> ";
-                            }
-                        ?>
-                    </div>
-            </section>
-            <!-- fasting food Section -->
-            <section class="menu-category" id="Fasting-food">
-            <h2 class="text-center my-4">Fasting-foods</h2>
-            <div class="row g-3">       
-                <?php
-                    $catagory = "Fasting-food";
-                    $stmt = $conn -> prepare("SELECT * FROM food WHERE Category = ?");
-                    //check if the statement was prepare successfuly
-                    if($stmt){
-                        $stmt -> bind_param("s", $catagory);
-                        $stmt -> execute();
-                        $result = $stmt -> get_result();
-                        //check if there are the value in the table or not
-                        if($result -> num_rows > 0){
-                            while($row = $result -> fetch_assoc()){
-                            ?>
-                            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-                                    <div class="card h-100" data-category="soups" data-price="<?php echo $row['Price']; ?>">
-                                        <img src="<?php echo $row['ImageURL'] ?>" class="card-img-top img-fluid" alt=" <?php echo $row['Name']?> ">
-                                        <div class="card-body d-flex flex-column">
-                                            <h5 class="card-title fw-semibold"> <?php echo $row['Name']?> </h5>
-                                            <p class="card-text"> <?php echo $row['Description']?> </p>
-                                            <p class="card-text"><strong> <?php echo $row['Price']?> birr </strong></p>
-                                            <div class="d-flex align-items-center mb-3">
-                                                <label for="quantity-salad1" class="me-2 mb-0">Quantity:</label>
-                                                <div class="input-group w-40">
-                                                    <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="decrementQuantity('<?php echo ''; ?>')">−</button>
-                                                    <input id="quantity-salad2" type="text" class="form-control text-center" value="1" min="1" max="10" style="max-width:50px;">
-                                                    <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="incrementQuantity('quantity-salad2')"><i class="bi bi-caret-right-square"></i></button>
-                                                </div>
-                                            </div>
-                                            <div class="mt-auto d-flex justify-content-between">
-                                                <button class="btn btn-outline-secondary btn-sm" style="width: 40%;" title="add to cart">
-                                                    <i class="bi bi-cart3 "></i>
-                                                </button>
-                                                <button class="btn btn-outline-secondary btn-sm" style="width: 40%;" title="read more">
-                                                    View More...
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
-                        
-                            <?php
-                                }
+                        <?php
+                            }
                             } else {
                                 echo "<p style='color:red;'>No results found for the selected category.</p>";
                             }
@@ -275,6 +223,263 @@ if (isset($_POST['search']) && !empty($_POST['search'])) {
                     ?>
                 </div>
             </section>
+             <!-- Fasting food Section -->
+             <section class="menu-category" id="fasting-food">
+                <h2 class="text-center my-4">Fasting foods (የጾም ምግቦች):</h2>
+                <div class="row g-3">
+                    <?php
+                        $category = "Fasting-food"; // Corrected variable name spelling
+                        $stmt = $conn->prepare("SELECT * FROM food WHERE Category = ?");
+                    // Check if the statement was prepared successfully
+                        if ($stmt) {
+                            $stmt->bind_param("s", $category);
+                            $stmt->execute();
+
+                            // Get the result
+                            $result = $stmt->get_result();
+
+                            // Check if there are rows and fetch them
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                            ?>
+                                <div class="col-sm-6">
+                                    <div class="card" data-category="soups" data-price="<?php echo $row['Price']; ?>">
+                                        <img src="<?php echo $row['ImageURL'] ?>" class="card-img-top img-fluid" alt=" <?php echo $row['Name']?> ">
+                                        <div class="card-body">
+                                            <h5 class="card-title"> <?php echo $row['Name']?> </h5>
+                                            <p class="card-price">Price: <strong> <?php echo $row['Price']?> </strong>Birr</p>
+                                           
+                                            <div class="hidden-pay-content">
+                                                <!--
+                                                <p class="card-text"> <?php echo $row['Description']?> </p>
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <label for="quantity-salad1" class="me-2 mb-0">Quantity:</label>
+                                                    <div class="input-group w-40">
+                                                        <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="decrementQuantity('<?php echo ''; ?>')">−</button>
+                                                        <input id="quantity-salad2" type="text" class="form-control text-center" value="1" min="1" max="10" style="max-width:50px;">
+                                                        <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="incrementQuantity('quantity-salad2')"><i class="bi bi-caret-right-square"></i></button>
+                                                    </div>
+                                                </div>
+                                                -->
+                                                <div class="pay-button">
+                                                    <button class="add-to-cart-btn pay-btn-list" title="add to cart">
+                                                        Add To Cart
+                                                    </button>
+                                                    <button class="read-more-btn pay-btn-list" title="read more">
+                                                        View More
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        <?php
+                            }
+                            } else {
+                                echo "<p style='color:red;'>No results found for the selected category.</p>";
+                            }
+
+                            // Close the statement
+                            $stmt->close();
+                        } else {
+                            echo "<p style='color:red;'>Error in preparing the statement:</p> ";
+                        }
+                    ?>
+                </div>
+            </section>
+             <!-- Fast food  Section -->
+             <section class="menu-category" id="soups">
+                <h2 class="text-center my-4">Fast food (ፈጣን ምግቦች):</h2>
+                <div class="row g-3">
+                    <?php
+                        $category = "fast-food"; // Corrected variable name spelling
+                        $stmt = $conn->prepare("SELECT * FROM food WHERE Category = ?");
+                    // Check if the statement was prepared successfully
+                        if ($stmt) {
+                            $stmt->bind_param("s", $category);
+                            $stmt->execute();
+
+                            // Get the result
+                            $result = $stmt->get_result();
+
+                            // Check if there are rows and fetch them
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                            ?>
+                                <div class="col-sm-6">
+                                    <div class="card" data-category="soups" data-price="<?php echo $row['Price']; ?>">
+                                        <img src="<?php echo $row['ImageURL'] ?>" class="card-img-top img-fluid" alt=" <?php echo $row['Name']?> ">
+                                        <div class="card-body">
+                                            <h5 class="card-title"> <?php echo $row['Name']?> </h5>
+                                            <p class="card-price">Price: <strong> <?php echo $row['Price']?> </strong>Birr</p>
+                                           
+                                            <div class="hidden-pay-content">
+                                                <!--
+                                                <p class="card-text"> <?php echo $row['Description']?> </p>
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <label for="quantity-salad1" class="me-2 mb-0">Quantity:</label>
+                                                    <div class="input-group w-40">
+                                                        <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="decrementQuantity('<?php echo ''; ?>')">−</button>
+                                                        <input id="quantity-salad2" type="text" class="form-control text-center" value="1" min="1" max="10" style="max-width:50px;">
+                                                        <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="incrementQuantity('quantity-salad2')"><i class="bi bi-caret-right-square"></i></button>
+                                                    </div>
+                                                </div>
+                                                -->
+                                                <div class="pay-button">
+                                                    <button class="add-to-cart-btn pay-btn-list" title="add to cart">
+                                                        Add To Cart
+                                                    </button>
+                                                    <button class="read-more-btn pay-btn-list" title="read more">
+                                                        View More
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        <?php
+                            }
+                            } else {
+                                echo "<p style='color:red;'>No results found for the selected category.</p>";
+                            }
+
+                            // Close the statement
+                            $stmt->close();
+                        } else {
+                            echo "<p style='color:red;'>Error in preparing the statement:</p> ";
+                        }
+                    ?>
+                </div>
+            </section>
+            <!-- Drinks Section -->
+            <section class="menu-category" id="soups">
+                <h2 class="text-center my-4">Drinks</h2>
+                <div class="row g-3">
+                    <?php
+                        $category = "drink"; // Corrected variable name spelling
+                        $stmt = $conn->prepare("SELECT * FROM food WHERE Category = ?");
+                    // Check if the statement was prepared successfully
+                        if ($stmt) {
+                            $stmt->bind_param("s", $category);
+                            $stmt->execute();
+
+                            // Get the result
+                            $result = $stmt->get_result();
+
+                            // Check if there are rows and fetch them
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                            ?>
+                                <div class="col-sm-6">
+                                    <div class="card" data-category="soups" data-price="<?php echo $row['Price']; ?>">
+                                        <img src="<?php echo $row['ImageURL'] ?>" class="card-img-top img-fluid" alt=" <?php echo $row['Name']?> ">
+                                        <div class="card-body">
+                                            <h5 class="card-title"> <?php echo $row['Name']?> </h5>
+                                            <p class="card-price">Price: <strong> <?php echo $row['Price']?> </strong>Birr</p>
+                                           
+                                            <div class="hidden-pay-content">
+                                                <!--
+                                                <p class="card-text"> <?php echo $row['Description']?> </p>
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <label for="quantity-salad1" class="me-2 mb-0">Quantity:</label>
+                                                    <div class="input-group w-40">
+                                                        <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="decrementQuantity('<?php echo ''; ?>')">−</button>
+                                                        <input id="quantity-salad2" type="text" class="form-control text-center" value="1" min="1" max="10" style="max-width:50px;">
+                                                        <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="incrementQuantity('quantity-salad2')"><i class="bi bi-caret-right-square"></i></button>
+                                                    </div>
+                                                </div>
+                                                -->
+                                                <div class="pay-button">
+                                                    <button class="add-to-cart-btn pay-btn-list" title="add to cart">
+                                                        Add To Cart
+                                                    </button>
+                                                    <button class="read-more-btn pay-btn-list" title="read more">
+                                                        View More
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        <?php
+                            }
+                            } else {
+                                echo "<p style='color:red;'>No results found for the selected category.</p>";
+                            }
+
+                            // Close the statement
+                            $stmt->close();
+                        } else {
+                            echo "<p style='color:red;'>Error in preparing the statement:</p> ";
+                        }
+                    ?>
+                </div>
+            </section>
+            <!-- Others Section -->
+            <section class="menu-category" id="soups">
+                <h2 class="text-center my-4">Others</h2>
+                <div class="row g-3">
+                    <?php
+                        $category = "Others"; // Corrected variable name spelling
+                        $stmt = $conn->prepare("SELECT * FROM food WHERE Category = ?");
+                    // Check if the statement was prepared successfully
+                        if ($stmt) {
+                            $stmt->bind_param("s", $category);
+                            $stmt->execute();
+
+                            // Get the result
+                            $result = $stmt->get_result();
+
+                            // Check if there are rows and fetch them
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                            ?>
+                                <div class="col-sm-6">
+                                    <div class="card" data-category="soups" data-price="<?php echo $row['Price']; ?>">
+                                        <img src="<?php echo $row['ImageURL'] ?>" class="card-img-top img-fluid" alt=" <?php echo $row['Name']?> ">
+                                        <div class="card-body">
+                                            <h5 class="card-title"> <?php echo $row['Name']?> </h5>
+                                            <p class="card-price">Price: <strong> <?php echo $row['Price']?> </strong>Birr</p>
+                                           
+                                            <div class="hidden-pay-content">
+                                                <!--
+                                                <p class="card-text"> <?php echo $row['Description']?> </p>
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <label for="quantity-salad1" class="me-2 mb-0">Quantity:</label>
+                                                    <div class="input-group w-40">
+                                                        <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="decrementQuantity('<?php echo ''; ?>')">−</button>
+                                                        <input id="quantity-salad2" type="text" class="form-control text-center" value="1" min="1" max="10" style="max-width:50px;">
+                                                        <button class="btn btn-outline-secondary" type="button" style="max-width:30px;" onclick="incrementQuantity('quantity-salad2')"><i class="bi bi-caret-right-square"></i></button>
+                                                    </div>
+                                                </div>
+                                                -->
+                                                <div class="pay-button">
+                                                    <button class="add-to-cart-btn pay-btn-list" title="add to cart">
+                                                        Add To Cart
+                                                    </button>
+                                                    <button class="read-more-btn pay-btn-list" title="read more">
+                                                        View More
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        <?php
+                            }
+                            } else {
+                                echo "<p style='color:red;'>No results found for the selected category.</p>";
+                            }
+
+                            // Close the statement
+                            $stmt->close();
+                        } else {
+                            echo "<p style='color:red;'>Error in preparing the statement:</p> ";
+                        }
+                    ?>
+                </div>
+            </section>
+            
         </div>
 
     </div>
