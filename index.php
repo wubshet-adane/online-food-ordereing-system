@@ -83,6 +83,13 @@ if (isset($_POST['search']) && !empty($_POST['search'])) {
                     <option value="price_high_low">Price: High to Low</option>
                 </select>
             </div>
+            <div class="view-style">
+                <label for="view-as">View</label>
+                <select name="viewstyle" id="viewstyle">
+                    <option value="">land scape</option>
+                    <option value="">portrate</option>
+                </select>
+            </div>
         </section>
 
         <!-- Menu Section -->
