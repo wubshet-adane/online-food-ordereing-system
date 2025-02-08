@@ -87,20 +87,10 @@ body {
     color: #555;
     line-height: 1.5;
 }
-.skills, .experience {
-    background: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-}
-.skills h4, .experience h4 {
-    font-size: 18px;
-    color: #2575fc;
-}
-.skills ul, .experience ul {
-    list-style: none;
-    padding: 0;
-}
-.skills ul li, .experience ul li {
+
+.profile-form p {
     font-size: 16px;
-    color: #333;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 10px;
 }
