@@ -63,9 +63,9 @@ if (!isset($_SESSION['user_loggedin'])) {
                 <p><strong>User Name:</strong> <input type="text" value="<?php echo $_SESSION['username'];?>" disabled></p>
                 <p><strong>Email:</strong> <input type="email" value="<?php echo $_SESSION['email'];?>" disabled></p>
                 <p><strong>Password:</strong> <input type="text" value="<?php echo  $_SESSION['password'];?>" disabled></p>
-                <p><strong>Phone:</strong> <input type="text"></p>
-                <p><strong>Sex:</strong> <?php echo $_SESSION['sex']; ?></p>
-                <p><strong>Age:</strong> <?php echo $_SESSION['age']; ?></p>
+                <p><strong>Phone:</strong> <input type="text" value="<?php echo  $_SESSION['phone'];?>"></p>
+                <p><strong>Sex:</strong> <input type="text" value="<?php echo $_SESSION['sex'];?>" disabled></p>
+                <p><strong>Age:</strong> <input type="text" ></p>
                 <p><strong>Job:</strong> <?php echo $_SESSION['job']; ?></p>
                 <p><strong>Username:</strong> </p>
             </form>
