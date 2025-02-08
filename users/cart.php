@@ -133,33 +133,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <?php
             if($totalItems > 0){
         ?>
-                <div class="total-price">
-                    <span>Total:</span>
-                    <span class="totalprice"><?php echo number_format($totalPrice, 2); ?> <i>birr</i></span>
-                </div>
-                <button class="btn-checkout" id="btn-checkout">Proceed to Order</button>
-                <div id="overlay"></div>
-                <div class="orderMethod" id="orderMethod">
-                    <p>Order Methods</p>
-                    <small>Order or proceed with your payment using one of the following methods:</small>
-                    <pre>Select one way as you wish to pay:</pre>
-                    <div class="payment-button">
-                        <div class="paymentBTN" id="paymentAPI">
-                            <a href="#" class="btn-checkout" title="Pay with Tele-BIRR, mPesa, Chapa, AboPay, santimPay, etc.">Payment API</a>
-                        </div>
-                        <div class="paymentBTN" id="countDown">
-                            <a href="#" class="btn-checkout" title="pay from your stored money at our cafe">Countdown</a>
-                        </div>
+            <div class="total-price">
+                <span>Total:</span>
+                <span class="totalprice"><?php echo number_format($totalPrice, 2); ?> <i>birr</i></span>
+            </div>
+            <button class="btn-checkout" id="btn-checkout">Proceed to Order</button>
+            <div id="overlay"></div>
+            <div class="orderMethod" id="orderMethod">
+                <p>Order Methods</p>
+                <small>Order or proceed with your payment using one of the following methods:</small>
+                <pre>Select one way as you wish to pay:</pre>
+                <div class="payment-button">
+                    <div class="paymentBTN" id="paymentAPI">
+                        <a href="#" class="btn-checkout" title="Pay with Tele-BIRR, mPesa, Chapa, AboPay, santimPay, etc.">Payment API</a>
+                    </div>
+                    <div class="paymentBTN" id="countDown">
+                        <a href="#" class="btn-checkout" title="pay from your stored money at our cafe">Countdown</a>
                     </div>
                 </div>
+            </div>
         <?php
             }else{
         ?>
-                <div>
-                    <p>your cart is empty!</p>
-                    <p> Do You Wanna Add Our Amazing Food ? <a href="../index.php">here</a> </p>
-                    <p> How to add products to our cart ? <a href="..help.php">Help</a> </p>
-                </div>
+            <div>
+                <p>your cart is empty!</p>
+                <p> Do You Wanna Add Our Amazing Food ? <a href="../index.php">here</a> </p>
+                <p> How to add products to our cart ? <a href="..help.php">Help</a> </p>
+            </div>
         <?php
             }
         ?>
