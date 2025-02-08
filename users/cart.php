@@ -151,7 +151,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <a href="#" class="btn-checkout" title="pay from your stored money at our cafe">Countdown</a>
                         </div>
                     </div>
-                </div>    
+                </div>
         <?php
             }else{
         ?>

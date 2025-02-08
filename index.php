@@ -139,6 +139,13 @@ if (isset($_POST['search']) && !empty($_POST['search'])) {
                                                     <button class="read-more-btn pay-btn-list" title="read more">
                                                         View More
                                                     </button>
+                                                    <div class="overley" id="overley"></div>
+                                                    <div class="popup" id="popup">
+                                                        <h2> <?php echo $row['Name']?> </h2>
+                                                        <img src="<?php echo $row['ImageURL'] ?>" alt=" <?php echo $row['Name']?> ">
+                                                        <p> <?php echo $row['Description']?> </p>
+                                                        <button class="close-btn" id="close-btn">Close</button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
