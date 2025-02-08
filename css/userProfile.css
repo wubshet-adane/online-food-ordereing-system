@@ -113,4 +113,16 @@ body {
     .profile-details {
         width: 100%;
     }
+    .profile-form p {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        justify-content: center;
+    }
+    .profile-form p strong {
+        width: 100%;
+    }
+    .profile-form p input {
+        width: 100%;
+    }
 }
