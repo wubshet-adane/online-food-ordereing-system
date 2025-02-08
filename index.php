@@ -136,7 +136,7 @@ if (isset($_POST['search']) && !empty($_POST['search'])) {
                                                     <button class="add-to-cart-btn pay-btn-list" title="add to cart">
                                                         Add To Cart
                                                     </button>
-                                                    <button class="read-more-btn pay-btn-list" title="read more">
+                                                    <button class="read-more-btn pay-btn-list" title="read more" onclick="showPopup()" id="read-more-btn">
                                                         View More
                                                     </button>
 
@@ -144,10 +144,23 @@ if (isset($_POST['search']) && !empty($_POST['search'])) {
                                                     <div class="overley" id="overley"></div>
                                                     <div class="popup" id="popup">
                                                         <h2> <?php echo $row['Name']?> </h2>
-                                                        <img src="<?php echo $row['ImageURL'] ?>" alt=" <?php echo $row['Name']?> ">
+                                                        <img src="<?php echo $row['ImageURL'] ?>" alt=" <?php echo $row['Name']?>" class="card-img-top">
                                                         <p> <?php echo $row['Description']?> </p>
                                                         <button class="close-btn" id="close-btn">Close</button>
                                                     </div>
+                                                    <script>
+                                                        // JavaScript to toggle the order modal
+                                                        document.getElementById('read-more-btn').addEventListener('click', function (e) {
+                                                            e.preventDefault();
+                                                            document.getElementById('overley').style.display = 'block';
+                                                            document.getElementById('popup').style.display = 'block';
+                                                        });
+                                                        // JavaScript to close the modal when clicking outside
+                                                        document.getElementById('close-btn').addEventListener('click', function () {
+                                                            document.getElementById('popup').style.display = 'none';
+                                                            this.style.display = 'none';
+                                                        });
+                                                    </script>
                                                     
                                                 </div>
                                             </div>
