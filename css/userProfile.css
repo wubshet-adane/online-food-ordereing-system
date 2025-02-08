@@ -106,14 +106,17 @@ body {
 @media screen and (max-width: 768px) {
     .profile-container {
         flex-direction: column;
+        gap: 0;
     }
     .profile-sidebar {
         box-sizing: border-box;
         display: block;
         width: 100%;
         padding: 20px;
+        border-radius: none;
     }
     .profile-details {
+        background-color: #bfbfbf;
         width: 100%;
     }
     .profile-form p {
