@@ -97,7 +97,7 @@ body {
 .profile-form p input {
     color: #006275;
     font-family: cursive;
-    border: 1px solid #ddd;
+    border: none;
     border-radius: 5px;
     font-size: 16px;
     margin-left: 1rem;
