@@ -164,18 +164,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         ?>
     </div>
-            <script>
-                // JavaScript to toggle the order modal
-                document.getElementById('btn-checkout').addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.getElementById('orderMethod').style.display = 'block';
-                    document.getElementById('overlay').style.display = 'block';
-                });
-                // JavaScript to close the modal when clicking outside
-                document.getElementById('overlay').addEventListener('click', function () {
-                    document.getElementById('orderMethod').style.display = 'none';
-                    this.style.display = 'none';
-                });
-            </script>
+    <script>
+        // JavaScript to toggle the order modal
+        document.getElementById('btn-checkout').addEventListener('click', function (e) {
+            e.preventDefault();
+            document.getElementById('orderMethod').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        });
+        // JavaScript to close the modal when clicking outside
+        document.getElementById('overlay').addEventListener('click', function () {
+            document.getElementById('orderMethod').style.display = 'none';
+            this.style.display = 'none';
+        });
+    </script>
 </body>
 </html>
