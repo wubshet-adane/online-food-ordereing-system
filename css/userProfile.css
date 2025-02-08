@@ -114,15 +114,17 @@ body {
         width: 100%;
     }
     .profile-form p {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        justify-content: center;
+        box-sizing: border-box;
+        margin: 1rem 2rem;
+        border: 1px solid #ccc;
+        display: block;
+        padding: 1rem;
+        text-align: left;
     }
     .profile-form p strong {
-        width: 100%;
+        width: calc(100% - 6rem);
     }
     .profile-form p input {
-        width: 100%;
+        width: calc(100% - 6rem);
     }
 }
