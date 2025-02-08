@@ -67,7 +67,6 @@ if (!isset($_SESSION['user_loggedin'])) {
                 <p><strong>Sex:</strong> <input type="text" value="<?php echo $_SESSION['sex'];?>" disabled></p>
                 <p><strong>Age:</strong> <input type="text" value="<?php echo $_SESSION['age'];?>" disabled></p>
                 <p><strong>Job:</strong> <input type="text" value="<?php echo $_SESSION['job'];?>" disabled></p>
-                <p><strong>Username:</strong><input type="text" value="<?php echo $_SESSION['username'];?>" disabled> </p>
             </form>
         </div>
     </div>
