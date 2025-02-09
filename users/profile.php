@@ -46,7 +46,7 @@ if (!isset($_SESSION['user_loggedin'])) {
                         <?php
                     }
                 }
-            ?> 
+            ?>
             
             <h3><?php echo $_SESSION['firstName'] . ' ' . $_SESSION['lastName']; ?></h3>
             <p class="user-role">Software Engineer</p>
