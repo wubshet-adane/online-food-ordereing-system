@@ -47,19 +47,6 @@ body {
     font-style: italic;
 }
 
-.edit-badge {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    color: #fff;
-    background: #00ff00;
-    padding: 10px;
-    border-radius: 50%;
-    text-decoration: none;
-}
-.edit-badge:hover {
-    background: #0038d6;
-}
 .help-menu p {
     font-size: 14px;
     margin-top: 20px;
@@ -68,6 +55,7 @@ body {
     color: #f9f9f9;
 }
 .profile-details {
+    position: relative;
     width: 70%;
     padding: 30px;
     display: flex;
@@ -103,6 +91,24 @@ body {
     margin-left: 1rem;
 }
 
+.edit-badge {
+    cursor: pointer;
+    font-weight: bold;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    background: #375737;
+    padding: 10px;
+    border:none;
+    outline: none;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 1);
+}
+.edit-badge:hover {
+    background: #0038d6;
+}
 @media screen and (max-width: 768px) {
     .profile-container {
         flex-direction: column;
@@ -114,6 +120,11 @@ body {
         width: 100%;
         padding: 20px;
         border-radius: none;
+    }
+    .edit-badge {
+        top: 10px;
+        left: 10px;
+        right: auto;
     }
     .profile-details {
         background-color: #cfcccc;

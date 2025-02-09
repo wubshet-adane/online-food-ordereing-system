@@ -25,7 +25,7 @@ if (!isset($_SESSION['user_loggedin'])) {
     <div class="profile-container">
         <!-- Left Sidebar -->
         <div class="profile-sidebar">
-            <a href="editUserProfile.php" class="edit-badge"><i> Edit</i></a>
+            
             <?php
             //if user logged in
                 if(isset($_SESSION['image'])){
@@ -56,20 +56,23 @@ if (!isset($_SESSION['user_loggedin'])) {
         </div>
         <!-- Right Content -->
         <div class="profile-details">
-            <form action="editUserProfile.php" class="profile-form" method="POST" enctype="multipart/form-data">
+            <form action="<?php echo $_SERVER['PHP_SELF']?>" class="profile-form" method="POST" enctype="multipart/form-data">
                 <h4>Personal Information</h4>
-                <p><strong>First Name:</strong> <input type="text"  value="<?php echo $_SESSION['firstName'];?>" disabled></p>
-                <p><strong>Last Name:</strong> <input type="text" value="<?php echo $_SESSION['lastName'];?>" disabled></p>
-                <p><strong>User Name:</strong> <input type="text" value="<?php echo $_SESSION['username'];?>" disabled></p>
-                <p><strong>Email:</strong> <input type="email" value="<?php echo $_SESSION['email'];?>" disabled></p>
-                <p><strong>Password:</strong> <input type="text" value="<?php echo  $_SESSION['password'];?>" disabled></p>
-                <p><strong>Phone:</strong> <input type="text" value="<?php echo  'phone';?>" disabled></p>
-                <p><strong>Sex:</strong> <input type="text" value="<?php echo $_SESSION['sex'];?>" disabled></p>
-                <p><strong>Age:</strong> <input type="text" value="<?php echo $_SESSION['age'];?>" disabled></p>
-                <p><strong>Job:</strong> <input type="text" value="<?php echo $_SESSION['job'];?>" disabled></p>
+                <p><strong>First Name:</strong> <input class="input-feild" type="text" name="first-name"  value="<?php echo $_SESSION['firstName'];?>" disabled></p>
+                <p><strong>Last Name:</strong> <input class="input-feild" type="text" name="last-name" value="<?php echo $_SESSION['lastName'];?>" disabled></p>
+                <p><strong>User Name:</strong> <input class="input-feild" type="text" name="user-name" value="<?php echo $_SESSION['username'];?>" disabled></p>
+                <p><strong>Email:</strong> <input class="input-feild" type="email" name="email" value="<?php echo $_SESSION['email'];?>" disabled></p>
+                <p><strong>Password:</strong> <input class="input-feild" type="text" name="password" value="<?php echo  $_SESSION['password'];?>" disabled></p>
+                <p><strong>Phone:</strong> <input class="input-feild" type="text" name="phone" value="<?php echo  'phone';?>" disabled></p>
+                <p><strong>Sex:</strong> <input class="input-feild" type="text" name="sex" value="<?php echo $_SESSION['sex'];?>" disabled></p>
+                <p><strong>Age:</strong> <input class="input-feild" type="text" name="age" value="<?php echo $_SESSION['age'];?>" disabled></p>
+                <p><strong>Job:</strong> <input class="input-feild" type="text" name="job" value="<?php echo $_SESSION['job'];?>" disabled></p>
+                <button name="edit-profile" id="edit-btn" class="edit-badge" onclick="edit()">Edit</button>
+                <input type="submit" value="Update" id="update-btn" class="update-btn">
             </form>
         </div>
     </div>
-    <!-- Bootstrap JS -->
+    <!-- external JS -->
+    <script src="../js/user-profile.js"></script>
 </body>
 </html>
