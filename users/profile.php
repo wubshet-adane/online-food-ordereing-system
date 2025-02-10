@@ -19,6 +19,8 @@ if (!isset($_SESSION['user_loggedin'])) {
     <style>
        
     </style>
+    <!-- external JS -->
+     <script src="../javascript/edit-profile.js"></script>
 </head>
 
 <body>
@@ -67,12 +69,12 @@ if (!isset($_SESSION['user_loggedin'])) {
                 <p><strong>Sex:</strong> <input class="input-feild" type="text" name="sex" value="<?php echo $_SESSION['sex'];?>" disabled></p>
                 <p><strong>Age:</strong> <input class="input-feild" type="text" name="age" value="<?php echo $_SESSION['age'];?>" disabled></p>
                 <p><strong>Job:</strong> <input class="input-feild" type="text" name="job" value="<?php echo $_SESSION['job'];?>" disabled></p>
-                <button name="edit-profile" id="edit-btn" class="edit-badge" onclick="edit()">Edit</button>
                 <input type="submit" value="Update" id="update-btn" class="update-btn">
             </form>
+            <button name="edit-profile" id="edit-btn" class="edit-badge" onclick="edit()">Edit</button>
+
         </div>
     </div>
     <!-- external JS -->
-    <script src="../js/user-profile.js"></script>
 </body>
 </html>

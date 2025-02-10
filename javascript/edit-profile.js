@@ -5,14 +5,18 @@ function edit() {
 
     // Add event listener for the edit button
     edit_btn.addEventListener('click', function() {
-        if (input_tag.disabled === true) {
-            input_tag.disabled = false;  // Enable input field
+        if (input_tag.disabled) {
+            input_tag.removeAttribute('disabled');  // Enable input field
             input_tag.style.border = '1px solid #000';  // Change border style
             input_tag.focus();  // Focus the input field
-            this.style.display = 'none';  // Hide the edit button
-
+            this.style.value = 'Save';  // Change the button text to 'Save'
             // Show the update button after editing starts
             update_btn.style.display = 'inline-block';
+        }
+        else {
+            input_tag.setAttribute('disabled', 'disabled');  // Disable input field
+            alert(input_tag.getAttribute('disabled'));  // Show alert if no value is entered
+            input_tag.style.border = '1px solid #ccc';  // Change border style to disabled look
         }
     });
 
