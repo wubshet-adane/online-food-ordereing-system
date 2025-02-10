@@ -6,17 +6,21 @@ function edit() {
     // Add event listener for the edit button
     edit_btn.addEventListener('click', function() {
        input_tags.forEach(input_tag => {
-            if (input_tag.disabled) {
+            if (input_tag.disabled===true) {
                 input_tag.removeAttribute('disabled');  // Enable input field
                 input_tag.style.border = '1px solid #000';  // Change border style
                 // Show the update button after editing starts
                 update_btn.style.display = 'inline-block';
                 edit_btn.textContent = 'Cancel';  // Change the edit button text to cancel
-            }
+                edit_btn.style.backgroundColor = 'red';  // Change the edit button color to red
+                edit_btn.style.borderRadius= '5px';  // Change the edit button border radius to 0
+           }
             else {
-                input_tag.setAttribute('disabled');  // Disable input field
+                input_tag.disabled = true;  // Disable input field
                 input_tag.style.border = 'none';  // Change border style to disabled look
                 edit_btn.textContent = 'Edit';  // Change the edit button text back to edit
+                edit_btn.style.backgroundColor = '#007bff';  // Change the edit button color back to default
+                update_btn.style.display = 'none';  // Hide the update button after updating
             }
         });
        

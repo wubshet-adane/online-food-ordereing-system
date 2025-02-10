@@ -28,13 +28,73 @@ body {
     gap: 20px;
 }
 
-.profile-sidebar img {
+.user-img-container {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 50%;
+}
+
+.user-img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     border: 5px solid #fff;
     object-fit: cover;
 }
+
+
+.edit-pen-container {
+    position: absolute;
+    cursor: pointer;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+}
+
+.edit-pen-btn {
+    background: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    border: none;
+    outline: none;
+}
+
+.edit-pen-btn:hover .edit-pen-txt {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    animation: none;
+}
+
+.edit-pen-txt {
+    width: 30px;
+    height: 30px;
+    margin: auto;
+    border:1px solid #0e1515;
+    border-radius: 50%;
+    background-color: #16264b;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.upload-btn-wrapper {
+    overflow: hidden;
+    display: ;
+    cursor: pointer;
+    background: #375737;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 1);
+}
+
 
 .profile-sidebar h3 {
     margin-top: 10px;
@@ -51,7 +111,7 @@ body {
     font-size: 14px;
     margin-top: 20px;
 }
-.text-light {
+.help {
     color: #f9f9f9;
 }
 .profile-details {
@@ -112,6 +172,18 @@ body {
 }
 #update-btn{
     display: none;
+    background: #375737;
+    color: #fff;
+    padding: 10px;
+    border:none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 1);
+}
+
+#update-btn:hover {
+    background: #0038d6;
 }
 
 @media screen and (max-width: 768px) {

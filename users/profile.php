@@ -27,33 +27,46 @@ if (!isset($_SESSION['user_loggedin'])) {
     <div class="profile-container">
         <!-- Left Sidebar -->
         <div class="profile-sidebar">
-            
-            <?php
-            //if user logged in
-                if(isset($_SESSION['image'])){
-                ?>
-                    <img src="../<?php echo $_SESSION['image'];?>" title="<?php echo $_SESSION['firstName'].' ' . $_SESSION['lastName']; ?>" alt='User Img'>
+            <div class="user-img-container">
                 <?php
-                }
-                //if user have not profile imaage
-                else {
-                    if($_SESSION['sex'] == 'Male'){
-                        ?>
-                            <img src="../images/male.jpg" title="<?php echo $_SESSION['firstName'].' ' . $_SESSION['lastName']; ?>" alt='User Img1'>
-                        <?php
+                //if user logged in
+                    if(isset($_SESSION['image'])){
+                    ?>
+                        <img class="user-img" src="../<?php echo $_SESSION['image'];?>" title="<?php echo $_SESSION['firstName'].' ' . $_SESSION['lastName']; ?>" alt='User Img'>
+                    <?php
                     }
-                    else{
-                        ?>
-                            <img src="../images/female.jpg" title="<?php echo $_SESSION['firstName'].' ' . $_SESSION['lastName']; ?>" alt='User Img2'>
-                        <?php
+                    //if user have not profile imaage
+                    else {
+                        if($_SESSION['sex'] == 'Male'){
+                            ?>
+                                <img class="user-img" src="../images/male.jpg" title="<?php echo $_SESSION['firstName'].' ' . $_SESSION['lastName']; ?>" alt='User Img1'>
+                            <?php
+                        }
+                        else{
+                            ?>
+                                <img class="user-img" src="../images/female.jpg" title="<?php echo $_SESSION['firstName'].' ' . $_SESSION['lastName']; ?>" alt='User Img2'>
+                            <?php
+                        }
                     }
-                }
-            ?>
+                ?>
+                <div class="edit-pen-container">
+                    <button class="edit-pen-btn" id="edit-pen-btn" onclick="edit()">
+                        <div  class="edit-pen-txt" id="edit-pen-txt">edit</div> 
+                    </button>
+                </div>
+            </div>
+            <!-- Upload Image -->            
+            <div class="upload-btn-wrapper">
+                <form action="../include/upload.php" method="POST" enctype="multipart/form-data">
+                    <input type="file" name="profile-img" id="profile-img" class="profile-img" accept="image/*">
+                    <input type="submit" value="Upload" name="upload" class="upload-btn" id="upload-btn">
+                </form>
+            </div>
             
             <h3><?php echo $_SESSION['firstName'] . ' ' . $_SESSION['lastName']; ?></h3>
             <p class="user-role">Software Engineer</p>
             <div class="help-menu">
-                <p>Need help updating your profile? <a href="../help.php#updateProfile" class="text-light"><i>help</i></a></p>
+                <p>Need help updating your profile? <a href="../help.php#updateProfile" class="help"><i>help</i></a></p>
             </div>
         </div>
         <!-- Right Content -->
