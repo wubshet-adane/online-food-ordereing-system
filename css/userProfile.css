@@ -55,25 +55,9 @@ body {
 }
 
 .edit-pen-btn {
-    background: none;
-    border-radius: 50%;
-    width: 25px;
-    height: 25px;
-    border: none;
-    outline: none;
     cursor: pointer;
-}
-
-.edit-pen-btn:hover .edit-pen-txt {
-    width: 35px;
-    height: 35px;
-    cursor: pointer;
-    animation: none;
-}
-
-.edit-pen-txt {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     margin: auto;
     border:2px solid #ffffff;
     border-radius: 50%;
@@ -82,20 +66,28 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: bold;
 }
 
-.upload-btn-wrapper {
-    overflow: hidden;
-    display: none;
+.edit-pen-btn:hover{
+    width: 35px;
+    height: 35px;
     cursor: pointer;
-    background: #375737;
-    color: #fff;
+    animation: none;
+}
+
+
+
+.upload-btn-wrapper {
+    display: none;
+    justify-content: center;
+    flex-direction: row;
+    text-align: center;
+    overflow: hidden;
+    color: #caf9ff;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 1);
 }
-
 
 .profile-sidebar h3 {
     margin-top: 10px;

@@ -50,12 +50,10 @@ if (!isset($_SESSION['user_loggedin'])) {
                     }
                 ?>
                 <div class="edit-pen-container">
-                    <button class="edit-pen-btn" id="edit-pen-btn" onclick="edit()">
-                        <div  class="edit-pen-txt" id="edit-pen-txt">edit</div> 
-                    </button>
+                    <button class="edit-pen-btn" id="edit-pen-btn" onclick="editImage()">edit</button>
                 </div>
             </div>
-            <!-- Upload Image -->            
+            <!-- Upload Image -->
             <div class="upload-btn-wrapper">
                 <form action="../include/upload.php" method="POST" enctype="multipart/form-data">
                     <input type="file" name="profile-img" id="profile-img" class="profile-img" accept="image/*">
