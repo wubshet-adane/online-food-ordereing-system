@@ -92,6 +92,7 @@ body {
 }
 
 .edit-badge {
+    display: inline-block;
     cursor: pointer;
     font-weight: bold;
     position: absolute;
@@ -109,6 +110,10 @@ body {
 .edit-badge:hover {
     background: #0038d6;
 }
+#update-btn{
+    display: none;
+}
+
 @media screen and (max-width: 768px) {
     .profile-container {
         flex-direction: column;

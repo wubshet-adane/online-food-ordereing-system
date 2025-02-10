@@ -1,36 +1,36 @@
 function edit() {
-    const input_tag = document.querySelector('.input-feild');  // Get the input field
+    const input_tags = document.querySelectorAll('.input-feild');  // Get the input field
     const edit_btn = document.getElementById('edit-btn');  // Get the edit button
     const update_btn = document.getElementById('update-btn');  // Get the update button
 
     // Add event listener for the edit button
     edit_btn.addEventListener('click', function() {
-        if (input_tag.disabled) {
-            input_tag.removeAttribute('disabled');  // Enable input field
-            input_tag.style.border = '1px solid #000';  // Change border style
-            input_tag.focus();  // Focus the input field
-            this.style.value = 'Save';  // Change the button text to 'Save'
-            // Show the update button after editing starts
-            update_btn.style.display = 'inline-block';
-        }
-        else {
-            input_tag.setAttribute('disabled', 'disabled');  // Disable input field
-            alert(input_tag.getAttribute('disabled'));  // Show alert if no value is entered
-            input_tag.style.border = '1px solid #ccc';  // Change border style to disabled look
-        }
+       input_tags.forEach(input_tag => {
+            if (input_tag.disabled) {
+                input_tag.removeAttribute('disabled');  // Enable input field
+                input_tag.style.border = '1px solid #000';  // Change border style
+                // Show the update button after editing starts
+                update_btn.style.display = 'inline-block';
+                edit_btn.textContent = 'Cancel';  // Change the edit button text to cancel
+            }
+            else {
+                input_tag.setAttribute('disabled');  // Disable input field
+                input_tag.style.border = 'none';  // Change border style to disabled look
+                edit_btn.textContent = 'Edit';  // Change the edit button text back to edit
+            }
+        });
+       
     });
 
     // Add event listener for the update button
-    update_btn.addEventListener('click', function() {
-        // Example: perform some action (like saving the data)
-        const updatedValue = input_tag.value;
-        alert("Updated value: " + updatedValue);  // Show the updated value (you can replace this with saving the data)
+    update_btn.addEventListener('change' , function() {
 
-        // After update, disable the input field again
-        input_tag.disabled = true;
-        input_tag.style.border = '1px solid #ccc';  // Change border style to disabled look
-        edit_btn.style.display = 'inline-block';  // Show the edit button again
-        update_btn.style.display = 'none';  // Hide the update button after update
+        input_tags.forEach(input_tag => {
+            input_tag.setAttribute('disabled');  // Disable input field
+            input_tag.style.border = 'none';  // Change border style to disabled look
+            edit_btn.textContent = 'Edit';  // Change the edit button text back to edit
+        });
+        update_btn.style.display = 'none';  // Hide the update button after updating});
     });
 }
 
