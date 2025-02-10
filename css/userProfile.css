@@ -61,6 +61,7 @@ body {
     height: 25px;
     border: none;
     outline: none;
+    cursor: pointer;
 }
 
 .edit-pen-btn:hover .edit-pen-txt {
@@ -74,7 +75,7 @@ body {
     width: 30px;
     height: 30px;
     margin: auto;
-    border:1px solid #0e1515;
+    border:2px solid #ffffff;
     border-radius: 50%;
     background-color: #16264b;
     color: #fff;
@@ -86,7 +87,7 @@ body {
 
 .upload-btn-wrapper {
     overflow: hidden;
-    display: ;
+    display: none;
     cursor: pointer;
     background: #375737;
     color: #fff;
@@ -135,6 +136,12 @@ body {
     color: #000000;
     line-height: 1.5;
 }
+
+.profile-form{border: 1px solid #ccc; 
+    border-radius: 5px; 
+    padding: 1rem;
+ }
+
 
 .profile-form p strong {
     font-size: 16px;
