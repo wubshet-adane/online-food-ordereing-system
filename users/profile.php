@@ -70,7 +70,7 @@ if (!isset($_SESSION['user_loggedin'])) {
             </div>
         </div>
 
-        
+
         <!-- Right Content -->
         <div class="profile-details">
             <form action="<?php echo $_SERVER['PHP_SELF']?>" class="profile-form" method="POST" enctype="multipart/form-data">
@@ -87,7 +87,6 @@ if (!isset($_SESSION['user_loggedin'])) {
                 <input type="submit" value="Update" id="update-btn" class="update-btn">
             </form>
             <button name="edit-profile" id="edit-btn" class="edit-badge" onclick="edit()">Edit</button>
-
         </div>
     </div>
     <!-- external JS -->
