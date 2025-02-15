@@ -35,7 +35,7 @@ if (!isset($_SESSION['user_loggedin'])) {
                         <img class="user-img" src="../<?php echo $_SESSION['image'];?>" title="<?php echo $_SESSION['firstName'].' ' . $_SESSION['lastName']; ?>" alt='User Img'>
                     <?php
                     }
-                    
+
                     //if user have not profile imaage
                     else {
                         if($_SESSION['sex'] == 'Male'){
@@ -54,6 +54,7 @@ if (!isset($_SESSION['user_loggedin'])) {
                     <button class="edit-pen-btn" id="edit-pen-btn" onclick="editImage()">edit</button>
                 </div>
             </div>
+            
             <!-- Upload Image -->
             <div class="upload-btn-wrapper">
                 <form action="../include/upload.php" method="POST" enctype="multipart/form-data">
