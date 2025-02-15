@@ -25,6 +25,7 @@ if (!isset($_SESSION['user_loggedin'])) {
 
 <body>
     <div class="profile-container">
+        
         <!-- Left Sidebar -->
         <div class="profile-sidebar">
             <div class="user-img-container">
