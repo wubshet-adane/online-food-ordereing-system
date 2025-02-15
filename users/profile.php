@@ -69,6 +69,8 @@ if (!isset($_SESSION['user_loggedin'])) {
                 <p>Need help updating your profile? <a href="../help.php#updateProfile" class="help"><i>help</i></a></p>
             </div>
         </div>
+
+        
         <!-- Right Content -->
         <div class="profile-details">
             <form action="<?php echo $_SERVER['PHP_SELF']?>" class="profile-form" method="POST" enctype="multipart/form-data">
