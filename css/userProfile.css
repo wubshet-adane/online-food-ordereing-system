@@ -137,8 +137,8 @@ body {
 }
 
 .profile-form{
-    border: 1rem solid #ccc; 
-    border-radius: 8px; 
+    border: 0.7rem solid #ccc; 
+    border-radius: 1rem; 
     padding: 1rem;
  }
 
