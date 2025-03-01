@@ -44,7 +44,7 @@ body {
 
 .user-img {
     width: 150px;
-    height: 150px;
+    height: 150px; 
     border-radius: 50%;
     border: 5px solid #fff;
     object-fit: cover;
