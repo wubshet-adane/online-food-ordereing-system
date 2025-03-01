@@ -6,7 +6,6 @@ body {
 }
 /* Navbar Styling */
 nav {
-    background: linear-gradient(to bottom, #ffffff, #638bf9cd, #ffffffa5);
     padding: 10px;
     color: #FF5722;
     display: flex;
