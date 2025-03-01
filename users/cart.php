@@ -6,7 +6,7 @@ if (!isset($_SESSION['user_loggedin']) || !isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit();
 }
-/*
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $userID = $_SESSION['user_id'];
     $foodID = $_POST['food_id'];
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     header("Location: cart.php");
     exit();
 }
-    */
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,10 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Your Cart</title>
     <link rel="stylesheet" href="../css/cart.css">
     <!-- Bootstrap CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
     </style>
 </head>
@@ -153,7 +150,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>
             </div>
         <?php
-            }else{
+        }
+        
+        else{
         ?>
             <div>
                 <p>your cart is empty!</p>
