@@ -12,4 +12,4 @@ showPasswordCheckBox.addEventListener('change', function(){
         passwordInput.type = 'password';
         confirm_password.type = 'password';
     }
-})
+}) 
